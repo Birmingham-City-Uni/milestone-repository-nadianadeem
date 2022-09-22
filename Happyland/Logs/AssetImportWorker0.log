@@ -1,0 +1,343 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.4f1 (cb45f9cae8b7) revision 13321721'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Core' Language: 'en' Physical Memory: 16319 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/milestone-repository-nadianadeem/Happyland
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52928
+Successfully changed project path to: E:/milestone-repository-nadianadeem/Happyland
+E:/milestone-repository-nadianadeem/Happyland
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 99.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.4f1 (cb45f9cae8b7)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/milestone-repository-nadianadeem/Happyland/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1e89)
+    Vendor:   NVIDIA
+    VRAM:     5967 MB
+    Driver:   26.21.14.3200
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56916
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.229535 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 85.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.630 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4630ms)
+		BeginReloadAssembly (3150ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (954ms)
+			LoadAssemblies (3148ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (600ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (281ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (53ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005587 seconds.
+Android Extension - Scanning For ADB Devices 4393 ms
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image E:\milestone-repository-nadianadeem\Happyland\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\milestone-repository-nadianadeem\Happyland\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.740 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4740ms)
+		BeginReloadAssembly (98ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (4496ms)
+			LoadAssemblies (2285ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (759ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (1345ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (86ms)
+				ProcessInitializeOnLoadAttributes (294ms)
+				ProcessInitializeOnLoadMethodAttributes (942ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3368 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (111.0 KB). Loaded Objects now: 3826.
+Memory consumption went from 115.9 MB to 115.8 MB.
+Total: 2.736100 ms (FindLiveObjects: 0.241900 ms CreateObjectMapping: 0.193200 ms MarkObjects: 2.209100 ms  DeleteObjects: 0.091000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 549659.676495 seconds.
+  path: Assets/Meshtint Free Knight
+  artifactKey: Guid(b64ef5e1fe204af4cbb014f4c37580e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight using Guid(b64ef5e1fe204af4cbb014f4c37580e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c600fc1bdc16746402c1452d16c146e8') in 0.013023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.515310 seconds.
+  path: Assets/Meshtint Free Knight/FBX
+  artifactKey: Guid(618a8ebb41a30664d9e572399c24f307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/FBX using Guid(618a8ebb41a30664d9e572399c24f307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d28883f82deecc5a26e808d2a0102aa') in 0.009645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062595 seconds.
+  path: Assets/Meshtint Free Knight/FBX/Meshtint Free Knight.FBX
+  artifactKey: Guid(445581dbfbbea06408d552fa1aca77fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/FBX/Meshtint Free Knight.FBX using Guid(445581dbfbbea06408d552fa1aca77fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e99732e15d2d38a1e355821929c7c3') in 0.465479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Meshtint Free Knight/FBX/Sword.FBX
+  artifactKey: Guid(17e462df654aa664683c1e9f5eed62bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/FBX/Sword.FBX using Guid(17e462df654aa664683c1e9f5eed62bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433fdddabb7af10a158039ae2e62f821') in 0.020333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Meshtint Free Knight/FBX/Shield.FBX
+  artifactKey: Guid(8f414378dccad1146bbee06522d6d242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/FBX/Shield.FBX using Guid(8f414378dccad1146bbee06522d6d242) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7736165db2623443be2da2f029d6c3df') in 0.021956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Meshtint Free Knight/FBX/Meshtint Free Knight@Battle Idle.FBX
+  artifactKey: Guid(db4eaab5d375e8844851ce3cf2165adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/FBX/Meshtint Free Knight@Battle Idle.FBX using Guid(db4eaab5d375e8844851ce3cf2165adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43a5a8f40c0f42ae7bc96fdd3c3f348c') in 0.031299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.804124 seconds.
+  path: Assets/Meshtint Free Knight/Prefabs
+  artifactKey: Guid(dd7ad1f08d7a33f41abc3b1b43909c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Prefabs using Guid(dd7ad1f08d7a33f41abc3b1b43909c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4410589f447644ffe853d7757b87853f') in 0.007384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.039293 seconds.
+  path: Assets/Meshtint Free Knight/Prefabs/Meshtint Free Knight.prefab
+  artifactKey: Guid(5b5b1958cdf88ce49989e326859b9572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Prefabs/Meshtint Free Knight.prefab using Guid(5b5b1958cdf88ce49989e326859b9572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34a05c61e7f69bc4ea9eaa2a46fe7a79') in 0.020234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.594821 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials
+  artifactKey: Guid(4e97e120620873d44a52b11f61c8353a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials using Guid(4e97e120620873d44a52b11f61c8353a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d51388f6a590283ca135359055c736') in 0.006254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.155361 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/Meshtint Free Knight Tutorial.pdf
+  artifactKey: Guid(661e3dc0732785243a2ff779154b1166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/Meshtint Free Knight Tutorial.pdf using Guid(661e3dc0732785243a2ff779154b1166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd964d82a126ab44f0aab8a99055e6d64') in 0.010003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 959.268574 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG
+  artifactKey: Guid(b63384b497e3ca84c9710a9d95dcf618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG using Guid(b63384b497e3ca84c9710a9d95dcf618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '913a4db0d847a6e0dbf92d02a0784760') in 0.007564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.048787 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (0).png
+  artifactKey: Guid(043f7c7b9e6394041bdd266a4fe9dada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (0).png using Guid(043f7c7b9e6394041bdd266a4fe9dada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2c23d923df29eaab84bef97d66c037a') in 0.039032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (5).png
+  artifactKey: Guid(6bde150c1d1af75418fbf085c3ca4dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (5).png using Guid(6bde150c1d1af75418fbf085c3ca4dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '195be6965652600f0aafb3024fe97827') in 0.032308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (6).png
+  artifactKey: Guid(5ef1663e3114d7545b0a74d263287edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (6).png using Guid(5ef1663e3114d7545b0a74d263287edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85a47584f64aaf71be827a78af79f39') in 0.016425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (3).png
+  artifactKey: Guid(ff50e90dd9c89a64481f89266b102439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (3).png using Guid(ff50e90dd9c89a64481f89266b102439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01338177e8f16b0671f323d3b567b488') in 0.016813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (1).png
+  artifactKey: Guid(b75dd3a04b31d2a429fb4e29be03ba6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (1).png using Guid(b75dd3a04b31d2a429fb4e29be03ba6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194c4eeaaaf1055d75238a1f411b910a') in 0.015284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (13).png
+  artifactKey: Guid(c6d9b1b47b3e18e4e843cfb942ea7f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (13).png using Guid(c6d9b1b47b3e18e4e843cfb942ea7f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37ae63ddfc21f10fce2b1b8856deffef') in 0.016511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (4).png
+  artifactKey: Guid(7e6ed42c4eedc6e448e3bd11e530897a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (4).png using Guid(7e6ed42c4eedc6e448e3bd11e530897a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcbad7b657a0511312fab9e7d7b3a1d7') in 0.021162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (9).png
+  artifactKey: Guid(04f587ba9865fb341835e92d5b36d84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (9).png using Guid(04f587ba9865fb341835e92d5b36d84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21a4367ba8e26413651b04b2546af4e8') in 0.020230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (11).png
+  artifactKey: Guid(7d67e37f515d7604a9d5c161e9d09800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (11).png using Guid(7d67e37f515d7604a9d5c161e9d09800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b31fc4ed26040797a407bcd9c86ccf08') in 0.020289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (14).png
+  artifactKey: Guid(5e98af8abcff7a94d9f58a9c322844ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (14).png using Guid(5e98af8abcff7a94d9f58a9c322844ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b6313c3774b1ba2fb07d80efc8931c') in 0.015757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (12).png
+  artifactKey: Guid(b2b5c49bdeda6ec4693bb000565ebcad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (12).png using Guid(b2b5c49bdeda6ec4693bb000565ebcad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7073207b4fc2d911155fc33893217c29') in 0.019817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (2).png
+  artifactKey: Guid(1f8399b660a023b45a952a0d318c04a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (2).png using Guid(1f8399b660a023b45a952a0d318c04a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5ae2b803501445511c10bd67abbe39a') in 0.016461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (10).png
+  artifactKey: Guid(f27857526c278614b864220e5c7d6090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (10).png using Guid(f27857526c278614b864220e5c7d6090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e3e7cdfe601e170ed345cb529bed5e0') in 0.013485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (7).png
+  artifactKey: Guid(f9b15c03f67837b4fa2d503adbc6d963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (7).png using Guid(f9b15c03f67837b4fa2d503adbc6d963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5d25ed791cd2b75ed8caff9aa7c287b') in 0.017338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (8).png
+  artifactKey: Guid(3640ca5069049954e9fde48aafbbebc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Tutorials/PNG/Meshtint Free Knight Tutorial (8).png using Guid(3640ca5069049954e9fde48aafbbebc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d465075bfaf569d2d0ee1c36c21409c') in 0.013980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.224401 seconds.
+  path: Assets/Meshtint Free Knight/Scenes
+  artifactKey: Guid(c565cb3d2c64ce541be95aa624c8d867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Scenes using Guid(c565cb3d2c64ce541be95aa624c8d867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda76d3e9277b671850b40f4f04a9ef4') in 0.007047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.178139 seconds.
+  path: Assets/Meshtint Free Knight/Scenes/Ortho Scene.unity
+  artifactKey: Guid(b51e6e700bd47944a8ecc7b69b72ac1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Scenes/Ortho Scene.unity using Guid(b51e6e700bd47944a8ecc7b69b72ac1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '041e6e94b985740b4e07af511174e128') in 0.007457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.257895 seconds.
+  path: Assets/Meshtint Free Knight/Controllers
+  artifactKey: Guid(e4487f2d525a4334f9dcdfa6f73f6be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Controllers using Guid(e4487f2d525a4334f9dcdfa6f73f6be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302b482a8a1a32c813895366f687632b') in 0.007818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.648038 seconds.
+  path: Assets/Meshtint Free Knight/Controllers/Meshtint Free Knight.controller
+  artifactKey: Guid(d05c65343761305459dd4f72d1f51309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Meshtint Free Knight/Controllers/Meshtint Free Knight.controller using Guid(d05c65343761305459dd4f72d1f51309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756fc82eaac89e13558b076e2aa3a4de') in 0.011878 seconds 
