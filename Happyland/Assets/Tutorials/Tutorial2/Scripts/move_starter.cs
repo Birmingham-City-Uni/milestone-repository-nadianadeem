@@ -2,7 +2,7 @@
 
 // Movement for Chibi
 
-public class move_starter : MonoBehaviour {
+public class move_starter : MonoBehaviour{
     // chibi speed
     public float speed = 10.0f;
     // chibi rotation speed
@@ -10,17 +10,19 @@ public class move_starter : MonoBehaviour {
     // Public GameObject to store the seekable object in
     public GameObject seek_me;
 
-    Vector3 Cross(Vector3 v, Vector3 w) {
+    Vector3 Cross(Vector3 v, Vector3 w)
+    {
 
-        Vector3 crossProd = new Vector3(0,0,0);
+        Vector3 crossProd = new Vector3( 0, 0, 0);
 
         // crossProd = <do computation here>
-        
+
         return crossProd;
     }
 
     // Calculate the vector to the seek object
-    float CalculateAngle() {
+    float CalculateAngle()
+    {
 
         // Chibi foward facing vector
         Vector3 tF = this.transform.forward;
@@ -50,7 +52,8 @@ public class move_starter : MonoBehaviour {
     }
 
     // Calculate the distance from the chibi to whatever it is finding
-    void CalculateDistance() {
+    void CalculateDistance()
+    {
 
         // Chibi position
         Vector3 tP = this.transform.position;
@@ -70,7 +73,8 @@ public class move_starter : MonoBehaviour {
         Debug.Log("Unity Distance: " + unityDistance);
     }
 
-    void Update() {
+    void Update()
+    {
         // Get the horizontal and vertical axis.
         // By default they are mapped to the arrow keys.
         // The value is in the range -1 to 1
@@ -88,7 +92,8 @@ public class move_starter : MonoBehaviour {
         transform.Rotate(0, rotation, 0);
 
         // Check for the spacebar being pressed
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
 
             // Call CalculateDistance method
             CalculateDistance();
@@ -97,7 +102,8 @@ public class move_starter : MonoBehaviour {
         }
 
         // Check for the T key being pressed
-        if (Input.GetKeyDown(KeyCode.T)) {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
             // Call CalculateAngle method
             float angle_to_turn = CalculateAngle();
             this.transform.Rotate(0, angle_to_turn,0);
