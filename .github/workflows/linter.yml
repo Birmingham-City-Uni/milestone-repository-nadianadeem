@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Super Linter Workflow
 
 # Controls when the workflow will run
 on:
@@ -28,3 +28,5 @@ jobs:
         uses: github/super-linter@v4.9.5
         env:
           VALIDATE_CSHARP: true
+          FILTER_REGEX_EXCLUDE: .*Tutorials/.*
+          FILTER_REGEX_INCLUDE: .*cs/.*
