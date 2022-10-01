@@ -29,3 +29,4 @@ jobs:
         env:
           VALIDATE_CSHARP: true
           FILTER_REGEX_EXCLUDE: .*Tutorials/.*
+          FILTER_REGEX_INCLUDE: .*cs/.*
