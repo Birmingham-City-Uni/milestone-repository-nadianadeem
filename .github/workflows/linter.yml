@@ -28,3 +28,4 @@ jobs:
         uses: github/super-linter@v4.9.5
         env:
           VALIDATE_CSHARP: true
+          FILTER_REGEX_EXCLUDE: .*Tutorials/.*
