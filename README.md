@@ -1,3 +1,4 @@
+[![GitHub Super-Linter]([https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg](https://github.com/Birmingham-City-Uni/milestone-repository-nadianadeem/actions/workflows/.github/workflows/linter.yml/badge.svg))](https://github.com/marketplace/actions/super-linter)
 <h1> Happyland </h1>
 <h2> Brief Description </h2>
 <p> Happyland will be a tech demo of a boss fight. This shall include build up stages with weaker enemies, to then build up to a 2/3 stage boss battle! In Happyland all the surroundings look very cute and friendly but... get too close to the cute creatures and things can take a turn for the worse. </p>
