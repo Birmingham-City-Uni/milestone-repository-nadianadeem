@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FleeState : State
+public class SpawnState : State
 {
     Agent owner;
-    public FleeState(Agent owner)
+    public SpawnState(Agent owner)
     {
         this.owner = owner;
     }
 
     public override void Enter()
     {
-        Debug.Log("Entering Flee");
+        Debug.Log("Entering Spawn");
     }
 
     public override void Execute()
     {
-        Debug.Log("Executing Flee");
+        Debug.Log("Executing Spawn");
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting Flee");
+        Debug.Log("Exiting Spawn");
     }
 }
