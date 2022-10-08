@@ -24,8 +24,11 @@
 <h4> Main Boss </h4>
 
 <h2> Weekly Development Log </h2>
+<h4> 07/10/2022 </h4>
+This week I have completed the ray bundle and box cast from lab 3.
+
 <h4> 29/09/2022 </h4>
-This week I have excluded the tutorial files from linter as they do not contribute to the final project. I have also made some design documents for 2 enemies that will be in the game, these enemies will have finite state machines. 
+This week I have excluded the tutorial files from linter as they do not contribute to the final project. I have also made some design documents for 2 enemies that will be in the game, these enemies will have finite state machines. I completed the sphere cast and line cast from lab 3.
 
 <h4> 22/09/2022 </h4>
 <p> This week I have done the initial github setup as well as running through some ideas on paper to get my design document ready. I have also added the linter workflow to help with coding standards. I have imported various assets that I shall use for the environment, player and enemies for the project also. </p>
