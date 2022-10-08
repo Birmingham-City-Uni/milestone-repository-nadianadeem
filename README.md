@@ -25,7 +25,7 @@
 
 <h2> Weekly Development Log </h2>
 <h4> 07/10/2022 </h4>
-This week I have completed the ray bundle and box cast from lab 3.
+This week I have completed the ray bundle and box cast from lab 3. I had moved the state and agent code from labs into my main script folder after making the agent modular and creating additional states.
 
 <h4> 29/09/2022 </h4>
 This week I have excluded the tutorial files from linter as they do not contribute to the final project. I have also made some design documents for 2 enemies that will be in the game, these enemies will have finite state machines. I completed the sphere cast and line cast from lab 3.
