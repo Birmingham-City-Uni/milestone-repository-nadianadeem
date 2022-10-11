@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniBomb : Agent
 {
     // Update is called once per frame
-    public override void Update()
+    public override void FixedUpdate()
     {
         /*Quick plan of how FSM should work.
         If finished spawning -> Wander (Another FSM)
