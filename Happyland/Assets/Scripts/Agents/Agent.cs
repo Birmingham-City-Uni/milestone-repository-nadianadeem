@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-    StateManager sm = new StateManager();
-    bool stateChange = false;
+    [Header("Agent Settings")]
+    public StateManager stateManager;
+
+    public void Move(float _maxSpeed, Vector3 _waypoint)
+    {
+        Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
+        this.transform.LookAt(_waypoint);
+        this.transform.Translate(targetVelocity, Space.World);
+    }
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        sm.ChangeState(new SpawnState(this, sm));
+        
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
-        sm.Update();
-        if (this.transform.position.x > 5.0f && !stateChange)
-        {
-            sm.ChangeState(new EvadeState(this, sm));
-            stateChange = !stateChange;
-        }
-        if (this.transform.position.x < 5.0f && stateChange)
-        {
-            sm.ChangeState(new AttackState(this, sm));
-            stateChange = !stateChange;
-        }
+
     }
 }

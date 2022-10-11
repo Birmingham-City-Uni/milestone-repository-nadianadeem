@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable()]
 public class StateManager
 {
     [Header("State Manager Settings")]
@@ -57,7 +58,11 @@ public class StateManager
             this.stack = new Stack();
             stack.Push(startState);
             startState.Enter();
-        }        
+        }
+        else
+        {
+            ChangeState(startState);
+        }
     }
 
     // Update is called once per frame
