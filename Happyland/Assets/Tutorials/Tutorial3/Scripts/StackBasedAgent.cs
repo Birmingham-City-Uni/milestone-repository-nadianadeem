@@ -23,7 +23,7 @@ public class StackBasedAgent : Agent
     // Update is called once per frame
     public override void FixedUpdate()
     {
-        stateManager.FixedUpdate();
+        stateManager.Update();
         if((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() != typeof(SeekState)))
         {
             Debug.Log("Hit ");
