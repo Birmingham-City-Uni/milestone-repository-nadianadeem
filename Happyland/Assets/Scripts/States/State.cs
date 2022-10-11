@@ -4,6 +4,16 @@ using UnityEngine;
 
 public abstract class State
 {
+    protected Agent agent;
+    protected StateManager sm;
+
+    protected State(Agent _agent, StateManager _sm)
+    {
+        this.agent = _agent;
+        this.sm = _sm;
+
+    }
+
     public abstract void Enter();
 
     public abstract void Execute();

@@ -5,9 +5,8 @@ using UnityEngine;
 public class AttackState : State
 {
     Agent owner;
-    public AttackState(Agent owner)
+    public AttackState(Agent owner, StateManager sm): base(owner, sm)
     {
-        this.owner = owner;
     }
 
     public override void Enter()

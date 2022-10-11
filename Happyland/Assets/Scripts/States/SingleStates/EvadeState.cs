@@ -5,7 +5,7 @@ using UnityEngine;
 public class EvadeState : State
 {
     Agent owner;
-    public EvadeState(Agent owner)
+    public EvadeState(Agent owner, StateManager sm) : base(owner, sm)
     {
         this.owner = owner;
     }
