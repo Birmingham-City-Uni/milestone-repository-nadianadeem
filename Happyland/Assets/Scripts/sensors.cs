@@ -104,6 +104,7 @@ public class sensors : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        float length = raycastLength;
         Gizmos.color = Color.white;
         if(cachedTransform == null)
         {
@@ -122,12 +123,12 @@ public class sensors : MonoBehaviour
         switch (sensorType)
         {
             case Type.Line:
-                raycastLength = Vector3.Distance(this.transform.position, info.point);
-                Gizmos.DrawLine(Vector3.zero, Vector3.forward * raycastLength);
+                length = Vector3.Distance(this.transform.position, info.point);
+                Gizmos.DrawLine(Vector3.zero, Vector3.forward * length);
                 if (Hit)
                 {
                     Gizmos.color = Color.green;
-                    Gizmos.DrawCube(Vector3.forward * raycastLength, new Vector3(0.02f, 0.02f, 0.02f));
+                    Gizmos.DrawCube(Vector3.forward * length, new Vector3(0.02f, 0.02f, 0.02f));
                 }
                 break;
 
@@ -136,13 +137,14 @@ public class sensors : MonoBehaviour
                 if (Hit)
                 {
                     Vector3 hitCenter = info.point + info.normal * spherecastRadius;
-                    raycastLength = Vector3.Distance(cachedTransform.position, hitCenter);
+                    length = Vector3.Distance(cachedTransform.position, hitCenter);
                 }
-                Gizmos.DrawLine(Vector3.up * spherecastRadius, Vector3.up * spherecastRadius + Vector3.forward * raycastLength);
-                Gizmos.DrawLine(-Vector3.up * spherecastRadius, -Vector3.up * spherecastRadius + Vector3.forward * raycastLength);
-                Gizmos.DrawLine(Vector3.right * spherecastRadius, Vector3.right * spherecastRadius + Vector3.forward * raycastLength);
-                Gizmos.DrawLine(-Vector3.right * spherecastRadius, -Vector3.right * spherecastRadius + Vector3.forward * raycastLength);
-                Gizmos.DrawWireSphere(Vector3.forward * raycastLength, spherecastRadius);
+                else { length = raycastLength; }
+                Gizmos.DrawLine(Vector3.up * spherecastRadius, Vector3.up * spherecastRadius + Vector3.forward * length);
+                Gizmos.DrawLine(-Vector3.up * spherecastRadius, -Vector3.up * spherecastRadius + Vector3.forward * length);
+                Gizmos.DrawLine(Vector3.right * spherecastRadius, Vector3.right * spherecastRadius + Vector3.forward * length);
+                Gizmos.DrawLine(-Vector3.right * spherecastRadius, -Vector3.right * spherecastRadius + Vector3.forward * length);
+                Gizmos.DrawWireSphere(Vector3.forward * length, spherecastRadius);
                 break;
 
             case Type.BoxCast:
