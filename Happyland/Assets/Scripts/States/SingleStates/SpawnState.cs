@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SpawnState : State
 {
-    Agent owner;
-    public SpawnState(Agent owner)
+    public SpawnState(Agent owner, StateManager sm) : base(owner, sm)
     {
-        this.owner = owner;
     }
 
     public override void Enter()

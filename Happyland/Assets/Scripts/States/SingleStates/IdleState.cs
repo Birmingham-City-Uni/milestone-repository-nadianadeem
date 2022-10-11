@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    Agent owner;
-    public IdleState(Agent owner)
+    public IdleState(Agent owner, StateManager sm) : base(owner, sm)
     {
-        this.owner = owner;
     }
 
     public override void Enter()

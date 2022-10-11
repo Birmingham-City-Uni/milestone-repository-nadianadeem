@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class DieState : State
 {
-    Agent owner;
-    public DieState(Agent owner)
+    public DieState(Agent owner, StateManager sm) : base(owner, sm)
     {
-        this.owner = owner;
     }
 
     public override void Enter()

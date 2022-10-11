@@ -10,7 +10,7 @@ public class Agent : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        sm.ChangeState(new SpawnState(this));
+        sm.ChangeState(new SpawnState(this, sm));
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class Agent : MonoBehaviour
         sm.Update();
         if (this.transform.position.x > 5.0f && !stateChange)
         {
-            sm.ChangeState(new EvadeState(this));
+            sm.ChangeState(new EvadeState(this, sm));
             stateChange = !stateChange;
         }
         if (this.transform.position.x < 5.0f && stateChange)
         {
-            sm.ChangeState(new AttackState(this));
+            sm.ChangeState(new AttackState(this, sm));
             stateChange = !stateChange;
         }
     }
