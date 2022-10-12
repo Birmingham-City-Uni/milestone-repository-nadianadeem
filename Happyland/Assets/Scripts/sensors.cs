@@ -41,9 +41,9 @@ public class sensors : MonoBehaviour
 }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Scan();
+        //Scan();
     }
 
     public bool Hit { get; private set; }
@@ -61,7 +61,6 @@ public class sensors : MonoBehaviour
                 if(Physics.Linecast(this.transform.position, this.transform.position + dir * raycastLength, out info, hitMask, QueryTriggerInteraction.Ignore))
                 {
                     Hit = true;
-                    Debug.Log("Hit");
                     return true;
                 }
                 break;
@@ -69,7 +68,6 @@ public class sensors : MonoBehaviour
                 if(Physics.SphereCast(new Ray(this.transform.position, dir), spherecastRadius, out info, raycastLength, hitMask, QueryTriggerInteraction.Ignore))
                 {
                     Hit = true;
-                    Debug.Log("Hit");
                     return true;
                 }
                 break;
@@ -77,7 +75,6 @@ public class sensors : MonoBehaviour
                 if(Physics.CheckBox(this.transform.position, new Vector3(boxExtents.x, boxExtents.y, raycastLength)/2, this.transform.rotation, hitMask, QueryTriggerInteraction.Ignore))
                 {
                     Hit = true;
-                    Debug.Log("Hit");
                     return true;
                 }
                 break;
@@ -91,7 +88,6 @@ public class sensors : MonoBehaviour
                     if(Physics.Raycast(this.transform.position, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward, out info, raycastLength, hitMask, QueryTriggerInteraction.Ignore))
                     {
                         Hit = true;
-                        Debug.Log("Hit");
                         return true;
                     }
                     currentAngle += angleIncrement;

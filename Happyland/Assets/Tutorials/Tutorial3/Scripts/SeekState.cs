@@ -5,7 +5,7 @@ using UnityEngine;
 public class SeekState : State
 {
     Agent owner;
-    float seekFor = 0.1f;
+    float seekFor = 1.0f;
 
     public SeekState(Agent owner, StateManager sm): base(owner, sm)
     {
@@ -14,6 +14,11 @@ public class SeekState : State
     public override void Enter()
     {
         Debug.Log("Entering seek state.");
+    }
+
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
     }
 
     public override void Execute()
@@ -29,17 +34,5 @@ public class SeekState : State
     public override void Exit()
     {
         Debug.Log("Exiting seek state.");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

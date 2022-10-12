@@ -13,6 +13,11 @@ public class IdleState : State
         Debug.Log("Entering Idle");
     }
 
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
+    }
+
     public override void Execute()
     {
         Debug.Log("Executing Idle");

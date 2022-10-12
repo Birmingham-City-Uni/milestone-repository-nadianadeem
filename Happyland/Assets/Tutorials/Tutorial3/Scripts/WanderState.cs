@@ -17,15 +17,30 @@ public class WanderState : State
     public override void Enter()
     {
         Debug.Log("Entering wanter state.");
+
         waypoint = GameObject.Find("waypoint");
         Wander();
+    }
+
+    public override void ReEnter()
+    {
+        Debug.Log("Re-entering wander state");
+        if (lastLocation != null)
+        {
+            agent.Move(speed, lastLocation);
+            if ((agent.transform.position - lastLocation).magnitude < 0.1f)
+            {
+                Wander();
+                IsReEntering = false;
+            }
+        }
     }
 
     public override void Execute()
     {
         Debug.Log("Updating wander state");
         agent.Move(speed, wp);
-        if((agent.transform.position - wp).magnitude < 0.1f)
+        if ((agent.transform.position - wp).magnitude < 0.1f)
         {
             Wander();
         }
@@ -33,6 +48,7 @@ public class WanderState : State
 
     public override void Exit()
     {
+        lastLocation = agent.transform.position;
         Debug.Log("exiting wanter state.");
     }
 

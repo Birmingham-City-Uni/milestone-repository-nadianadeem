@@ -14,6 +14,11 @@ public class AttackState : State
         Debug.Log("Entering Attack");
     }
 
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
+    }
+
     public override void Execute()
     {
         Debug.Log("Executing Attack");

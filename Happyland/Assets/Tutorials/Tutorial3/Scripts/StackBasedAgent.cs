@@ -23,13 +23,25 @@ public class StackBasedAgent : Agent
     // Update is called once per frame
     public override void FixedUpdate()
     {
+        bool foundSeekMe = false;
         stateManager.Update();
-        if((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() != typeof(SeekState)))
+
+        if(wander.currentReEnteringTime <= 0)
         {
-            Debug.Log("Hit ");
-            stateManager.PushState(seek);
+            if ((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() != typeof(SeekState)))
+            {
+                Debug.Log("Hit");
+                stateManager.PushState(seek);
+                foundSeekMe = true;
+            }
+            
+            if ((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() == typeof(SeekState)) && foundSeekMe)
+            {
+                Debug.Log("Hit");
+                stateManager.PopState();
+            }
         }
-        
+
         if ((sensor.Hit == false) && (stateManager.GetCurrStateOnStack().GetType() != typeof(WanderState)))
         {
             stateManager.PushState(wander);

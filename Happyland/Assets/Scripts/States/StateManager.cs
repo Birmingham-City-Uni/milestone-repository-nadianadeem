@@ -22,6 +22,8 @@ public class StateManager
         {
             GetCurrStateOnStack().Exit();
             stack.Pop();
+            GetCurrStateOnStack().IsReEntering = true;
+            GetCurrStateOnStack().currentReEnteringTime = GetCurrStateOnStack().ReEnteringTime;
             return true;
         }
         else return false;
@@ -68,8 +70,14 @@ public class StateManager
     // Update is called once per frame
     public void Update()
     {
-        if(GetCurrStateOnStack() != null)
+        if (GetCurrStateOnStack().IsReEntering)
         {
+            GetCurrStateOnStack().ReEnteringTime -= Time.deltaTime;
+            GetCurrStateOnStack().ReEnter();
+        }
+        else if (GetCurrStateOnStack() != null || ( GetCurrStateOnStack().currentReEnteringTime > 0 && !GetCurrStateOnStack().IsReEntering ))
+        {
+            GetCurrStateOnStack().currentReEnteringTime -= Time.deltaTime;
             GetCurrStateOnStack().Execute();
         }
         

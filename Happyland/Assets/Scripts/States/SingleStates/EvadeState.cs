@@ -13,6 +13,11 @@ public class EvadeState : State
         Debug.Log("Entering Evade");
     }
 
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
+    }
+
     public override void Execute()
     {
         Debug.Log("Executing Evade");

@@ -13,6 +13,11 @@ public class DieState : State
         Debug.Log("Entering Die");
     }
 
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
+    }
+
     public override void Execute()
     {
         Debug.Log("Executing Die");

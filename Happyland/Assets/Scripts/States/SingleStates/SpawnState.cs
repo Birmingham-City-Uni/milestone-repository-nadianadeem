@@ -12,6 +12,10 @@ public class SpawnState : State
     {
         Debug.Log("Entering Spawn");
     }
+    public override void ReEnter()
+    {
+        Debug.Log("Entering Idle");
+    }
 
     public override void Execute()
     {
