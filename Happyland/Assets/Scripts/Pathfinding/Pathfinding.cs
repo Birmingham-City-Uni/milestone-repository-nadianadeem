@@ -1,18 +1,173 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Pathfinding : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+	public Transform seeker, target;
+	Grid grid;
+
+	void Awake()
+	{
+		grid = GetComponent<Grid>();
+	}
+
+	void Update()
+	{
+		//FindPathAStar(seeker.position, target.position);
+		FindPathDFS(seeker.position, target.position);
+		//FindPathBFS(seeker.position, target.position);
+	}
+
+	void FindPathAStar(Vector3 startPos, Vector3 targetPos)
+	{
+		Node startNode = grid.NodeFromWorldPoint(startPos);
+		Node targetNode = grid.NodeFromWorldPoint(targetPos);
+
+		List<Node> openSet = new List<Node>();
+		HashSet<Node> closedSet = new HashSet<Node>();
+		openSet.Add(startNode);
+
+		while (openSet.Count > 0)
+		{
+			Node node = openSet[0];
+			for (int i = 1; i < openSet.Count; i++)
+			{
+				if (openSet[i].fCost < node.fCost || openSet[i].fCost == node.fCost)
+				{
+					if (openSet[i].hCost < node.hCost)
+						node = openSet[i];
+				}
+			}
+
+			openSet.Remove(node);
+			closedSet.Add(node);
+
+			if (node == targetNode)
+			{
+				RetracePath(startNode, targetNode);
+				return;
+			}
+
+			foreach (Node neighbour in grid.GetNeighbours(node))
+			{
+				if (!neighbour.walkable || closedSet.Contains(neighbour))
+				{
+					continue;
+				}
+
+				int newCostToNeighbour = node.gCost + GetDistance(node, neighbour);
+				if (newCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
+				{
+					neighbour.gCost = newCostToNeighbour;
+					neighbour.hCost = GetDistance(neighbour, targetNode);
+					neighbour.parent = node;
+
+					if (!openSet.Contains(neighbour))
+						openSet.Add(neighbour);
+				}
+			}
+		}
+	}
+
+	void FindPathDFS(Vector3 startPos, Vector3 targetPos)
+	{
+		Node startNode = grid.NodeFromWorldPoint(startPos);
+		Node targetNode = grid.NodeFromWorldPoint(targetPos);
+
+		Stack<Node> frontier = new Stack<Node>();
+		List<Node> explored = new List<Node>();
+
+		frontier.Push(startNode);
+
+		while (frontier.Count != 0)
+		{
+			Node state = frontier.Pop();
+			explored.Add(state);
+
+			if (state == targetNode)
+			{
+				RetracePath(startNode, targetNode);
+				return;
+			}
+
+			foreach (Node neighbour in grid.GetNeighbours(state))
+			{
+				if (!neighbour.walkable || explored.Contains(neighbour))
+				{
+					continue;
+				}
+
+                if (!frontier.Contains(neighbour))
+                {
+					frontier.Push(neighbour);
+					neighbour.parent = state;
+                }
+			}
+		}
+	}
+
+	void FindPathBFS(Vector3 startPos, Vector3 targetPos)
     {
-        
-    }
+		Node startNode = grid.NodeFromWorldPoint(startPos);
+		Node targetNode = grid.NodeFromWorldPoint(targetPos);
+
+		Queue<Node> frontier = new Queue<Node>();
+		List<Node> explored = new List<Node>();
+
+		frontier.Enqueue(startNode);
+
+		while (frontier.Count != 0)
+		{
+			Node state = frontier.Dequeue();
+			explored.Add(state);
+
+			if (state == targetNode)
+			{
+				RetracePath(startNode, targetNode);
+				return;
+			}
+
+			foreach (Node neighbour in grid.GetNeighbours(state))
+			{
+				if (!neighbour.walkable || explored.Contains(neighbour))
+				{
+					continue;
+				}
+
+				if (!frontier.Contains(neighbour))
+				{
+					frontier.Enqueue(neighbour);
+					neighbour.parent = state;
+				}
+			}
+		}
+	}
+
+	void RetracePath(Node startNode, Node endNode)
+	{
+		List<Node> path = new List<Node>();
+		Node currentNode = endNode;
+
+		while (currentNode != startNode)
+		{
+			path.Add(currentNode);
+			currentNode = currentNode.parent;
+		}
+		path.Reverse();
+
+		grid.path = path;
+
+	}
+
+	int GetDistance(Node nodeA, Node nodeB)
+	{
+		int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
+		int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
+
+		if (dstX > dstY)
+			return 14 * dstY + 10 * (dstX - dstY);
+		return 14 * dstX + 10 * (dstY - dstX);
+	}
 }
