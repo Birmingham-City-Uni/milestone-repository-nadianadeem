@@ -24,6 +24,18 @@
 <h4> Main Boss </h4>
 
 <h2> Weekly Development Log </h2>
+<h4> 14/10/2022 </h4>
+This week I have implemented a node based grid for pathfinding algorithms within my own game scene. With this knowledge I then implemented AStar, BFS and DFS pathfinding algorithms to use alongside my sensors. For next weeks work my plan is to make this modular so within the inspector you can decide which path finding alorithm agents will use, as well as piecing this together with FSMs. I also need to tweak the node radius so the bridge I created works.
+
+<h3> Depth First Search Example </h3>
+<img src = "AIPhotos/FindPathDFS.png" title= "Depth First Search Example">
+
+<h3> Breadth First Search Example </h3>
+<img src = "AIPhotos/FindPathBFS.png" title= "Breadth First Search Example">
+
+<h3> A Star Algorithm Example </h3>
+<img src = "AIPhotos/FindPathAstar.png" title= "A Star Algorithm Example">
+
 <h4> 07/10/2022 </h4>
 This week I have completed the ray bundle and box cast from lab 3. I have moved the state and agent code from labs into my main script folder after making the agent modular and creating additional states. Created 2 branches and pull request to implement the target board and mini bomb separately. Completed the stack based lab and then made the agent and state manager be ab able to handle stack based and non-stack based states. Created a "Re-enter" method for states, so when returning to a state when stack based, there is an option to and finish what it was doing and then go into its "execute" method. In addition to this, I have allowed an agent to specify a time for when it is going back into a state so it can be in that state for a minimum amount of time before being subject to usual checks and going into other states, this is to combat the flipping inbetween states when re-entering them.
 
