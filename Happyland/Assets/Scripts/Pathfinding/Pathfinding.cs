@@ -4,7 +4,15 @@ using System.Collections.Generic;
 
 public class Pathfinding : MonoBehaviour
 {
+	public enum PathfindingAlgorithm
+	{
+		AStar,
+		BFS,
+		DFS
+	}
 
+	[Header("Pathfinding Settings")]
+	public PathfindingAlgorithm pathfindingType = PathfindingAlgorithm.AStar;
 	public Transform seeker, target;
 	Grid grid;
 
@@ -15,9 +23,18 @@ public class Pathfinding : MonoBehaviour
 
 	void Update()
 	{
-		//FindPathAStar(seeker.position, target.position);
-		FindPathDFS(seeker.position, target.position);
-		//FindPathBFS(seeker.position, target.position);
+        switch(pathfindingType)
+		{
+			case PathfindingAlgorithm.AStar:
+				FindPathAStar(seeker.position, target.position);
+				break;
+			case PathfindingAlgorithm.BFS:
+				FindPathBFS(seeker.position, target.position);
+				break;
+			case PathfindingAlgorithm.DFS:
+				FindPathDFS(seeker.position, target.position);
+				break;
+		}
 	}
 
 	void FindPathAStar(Vector3 startPos, Vector3 targetPos)
