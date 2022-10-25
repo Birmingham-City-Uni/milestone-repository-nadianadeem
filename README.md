@@ -12,6 +12,7 @@
 <img src = "AIPhotos/MapOverviewV1.png" title = "Map layout for Happyland">
 
 <h4> Player </h4>
+The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
 
 <h4> Boid Implementation </h4>
 
@@ -24,6 +25,9 @@
 <h4> Main Boss </h4>
 
 <h2> Weekly Development Log </h2>
+<h4> 20/10/2022 </h4>
+This week I have been working on pathfinding algorithms and building the Mini Bomb FSM. I have implemented Greedy Best First Search and made the system more modular so the pathfind script can be put on individual enemies and the type of pathfind can be set individually. In addition to this, I have been putting together a basic combat system for the hero, with it's working animations.
+
 <h4> 14/10/2022 </h4>
 This week I have implemented a node based grid for pathfinding algorithms within my own game scene. With this knowledge I then implemented AStar, BFS and DFS pathfinding algorithms to use alongside my sensors. For next weeks work my plan is to make this modular so within the inspector you can decide which path finding alorithm agents will use, as well as piecing this together with FSMs. I also need to tweak the node radius so the bridge I created works.
 
