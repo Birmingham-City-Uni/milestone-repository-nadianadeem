@@ -7,11 +7,20 @@ public class Agent : MonoBehaviour
     [Header("Agent Settings")]
     public StateManager stateManager;
 
-    public void Move(float _maxSpeed, Vector3 _waypoint)
+    public Pathfinding pathfindingComponent;
+
+    public bool Move(float _maxSpeed, Vector3 _waypoint)
     {
+        pathfindingComponent.UpdatePathfinding(_waypoint);
         Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
-        this.transform.LookAt(_waypoint);
-        this.transform.Translate(targetVelocity, Space.World);
+        if(pathfindingComponent.grid.path.Count > 0)
+        {
+            this.transform.LookAt(pathfindingComponent.grid.path[0].worldPosition);
+            this.transform.Translate(targetVelocity, Space.World);
+            return true;
+        }
+
+        return false;
     }
 
     // Start is called before the first frame update

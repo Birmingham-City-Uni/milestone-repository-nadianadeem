@@ -70,20 +70,25 @@ public class StateManager
     // Update is called once per frame
     public void Update()
     {
-        if (GetCurrStateOnStack().IsReEntering)
+        if (IsStackBased)
         {
-            GetCurrStateOnStack().ReEnteringTime -= Time.deltaTime;
-            GetCurrStateOnStack().ReEnter();
+            if (GetCurrStateOnStack().IsReEntering)
+            {
+                GetCurrStateOnStack().ReEnteringTime -= Time.deltaTime;
+                GetCurrStateOnStack().ReEnter();
+            }
+            else if (GetCurrStateOnStack() != null || (GetCurrStateOnStack().currentReEnteringTime > 0 && !GetCurrStateOnStack().IsReEntering))
+            {
+                GetCurrStateOnStack().currentReEnteringTime -= Time.deltaTime;
+                GetCurrStateOnStack().Execute();
+            }
         }
-        else if (GetCurrStateOnStack() != null || ( GetCurrStateOnStack().currentReEnteringTime > 0 && !GetCurrStateOnStack().IsReEntering ))
+        else
         {
-            GetCurrStateOnStack().currentReEnteringTime -= Time.deltaTime;
-            GetCurrStateOnStack().Execute();
-        }
-        
-        if(currState != null)
-        {
-            currState.Execute();
+            if (currState != null)
+            {
+                currState.Execute();
+            }
         }
     }
 }

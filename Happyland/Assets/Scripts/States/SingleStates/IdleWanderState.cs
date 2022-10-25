@@ -31,6 +31,7 @@ public class IdleWanderState : State
     public override void Execute()
     {
         Debug.Log("Executing Idle");
+        wanderStateManager.Update();
     }
 
     public override void Exit()

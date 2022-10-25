@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WanderFindBoidState : State
 {
+    public float speed = 10.0f;
+    private Grid gridComp;
+    private int randX, randY;
+
     public WanderFindBoidState(Agent owner, StateManager sm) : base(owner, sm)
     {
     }
@@ -11,6 +15,9 @@ public class WanderFindBoidState : State
     public override void Enter()
     {
         Debug.Log("Entering find boid.");
+        gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
+        randX = Random.Range(0, gridComp.gridSizeX-1);
+        randY = Random.Range(0, gridComp.gridSizeY-1);
     }
 
     public override void ReEnter()
@@ -21,6 +28,20 @@ public class WanderFindBoidState : State
     public override void Execute()
     {
         Debug.Log("Executing find boid.");
+        
+        if(agent.Move(speed, gridComp.grid[randX, randY].worldPosition))
+        {
+            if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)
+            {
+                randX = Random.Range(0, gridComp.gridSizeX - 1);
+                randY = Random.Range(0, gridComp.gridSizeY - 1);
+            }
+        }
+        else
+        {
+            randX = Random.Range(0, gridComp.gridSizeX - 1);
+            randY = Random.Range(0, gridComp.gridSizeY - 1);
+        }
     }
 
     public override void Exit()

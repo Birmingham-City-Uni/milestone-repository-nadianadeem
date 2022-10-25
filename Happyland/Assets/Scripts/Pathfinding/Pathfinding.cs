@@ -15,30 +15,30 @@ public class Pathfinding : MonoBehaviour
 	[Header("Pathfinding Settings")]
 	public PathfindingAlgorithm pathfindingType = PathfindingAlgorithm.AStar;
 	public Transform seeker, target;
-	Grid grid;
+	public Grid grid;
 
 	void Awake()
 	{
 		grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
 	}
 
-	void Update()
+	public void UpdatePathfinding( Vector3 targetPosition)
 	{
-   //     switch (pathfindingType)
-   //     {
-   //         case PathfindingAlgorithm.AStar:
-   //             FindPathAStar(seeker.position, target.position);
-   //             break;
-			//case PathfindingAlgorithm.GreedyBestFirstSearch:
-			//	FindPathGreedyBestFirstSearch(seeker.position, target.position);
-			//	break;
-   //         case PathfindingAlgorithm.BFS:
-   //             FindPathBFS(seeker.position, target.position);
-   //             break;
-   //         case PathfindingAlgorithm.DFS:
-   //             FindPathDFS(seeker.position, target.position);
-   //             break;
-   //     }
+        switch (pathfindingType)
+        {
+            case PathfindingAlgorithm.AStar:
+                FindPathAStar(seeker.position, targetPosition);
+                break;
+            case PathfindingAlgorithm.GreedyBestFirstSearch:
+                FindPathGreedyBestFirstSearch(seeker.position, targetPosition);
+                break;
+            case PathfindingAlgorithm.BFS:
+                FindPathBFS(seeker.position, targetPosition);
+                break;
+            case PathfindingAlgorithm.DFS:
+                FindPathDFS(seeker.position, targetPosition);
+                break;
+        }
     }
 
 	void FindPathAStar(Vector3 startPos, Vector3 targetPos)
