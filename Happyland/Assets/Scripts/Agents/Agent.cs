@@ -6,17 +6,35 @@ public class Agent : MonoBehaviour
 {
     [Header("Agent Settings")]
     public StateManager stateManager;
+    public Vector3 oldWaypoint;
 
     public Pathfinding pathfindingComponent;
 
     public bool Move(float _maxSpeed, Vector3 _waypoint)
     {
-        pathfindingComponent.UpdatePathfinding(_waypoint);
+        if(_waypoint != oldWaypoint)
+        {
+            oldWaypoint = _waypoint;
+            pathfindingComponent.UpdatePathfinding(_waypoint);
+        }
+        
+        if (pathfindingComponent.grid.NodeFromWorldPoint(this.transform.position).isWater)
+        {
+            _maxSpeed = _maxSpeed / 2;
+        }
+
         Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
-        if(pathfindingComponent.grid.path.Count > 0)
+
+        if (pathfindingComponent.grid.path.Count > 0)
         {
             this.transform.LookAt(pathfindingComponent.grid.path[0].worldPosition);
             this.transform.Translate(targetVelocity, Space.World);
+
+            if(Vector3.Distance(this.transform.position, pathfindingComponent.grid.path[0].worldPosition) < 0.2f)
+            {
+                pathfindingComponent.grid.path.RemoveAt(0);
+            }
+
             return true;
         }
 

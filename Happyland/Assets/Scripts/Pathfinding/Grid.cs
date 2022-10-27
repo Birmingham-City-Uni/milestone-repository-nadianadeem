@@ -6,6 +6,7 @@ public class Grid : MonoBehaviour
 {
 
 	public LayerMask unwalkableMask;
+	public LayerMask waterMask;
 	public Vector2 gridWorldSize;
 	public float nodeRadius;
 	public Node[,] grid;
@@ -32,7 +33,9 @@ public class Grid : MonoBehaviour
 			{
 				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
 				bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-				grid[x, y] = new Node(walkable, worldPoint, x, y);
+				bool isWater = !(Physics.CheckSphere(worldPoint, nodeRadius, waterMask));
+
+				grid[x, y] = new Node(walkable, isWater, worldPoint, x, y);
 			}
 		}
 	}

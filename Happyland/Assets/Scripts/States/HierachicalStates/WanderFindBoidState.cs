@@ -7,9 +7,15 @@ public class WanderFindBoidState : State
     public float speed = 10.0f;
     private Grid gridComp;
     private int randX, randY;
+    public Pathfinding pathfindingComponent;
 
     public WanderFindBoidState(Agent owner, StateManager sm) : base(owner, sm)
     {
+    }
+
+    void Start()
+    {
+        pathfindingComponent = agent.GetComponent<Pathfinding>();
     }
 
     public override void Enter()
