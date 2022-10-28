@@ -26,7 +26,9 @@ public class sensors : MonoBehaviour
 
     [Header("RayBundle Settings")]
 
-    [Range(1, 20)]
+    public Transform rayOrigin;
+
+    [Range(1, 40)]
     public int rayResolution = 1;
 
     [Range(1, 360)]
@@ -43,7 +45,7 @@ public class sensors : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Scan();
+        Scan();
     }
 
     public bool Hit { get; private set; }
@@ -85,7 +87,7 @@ public class sensors : MonoBehaviour
 
                 for (int i = 0; i <= rayResolution; i++)
                 {
-                    if(Physics.Raycast(this.transform.position, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward, out info, raycastLength, hitMask, QueryTriggerInteraction.Ignore))
+                    if(Physics.Raycast(rayOrigin.transform.position, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward, out info, raycastLength, hitMask, QueryTriggerInteraction.Ignore))
                     {
                         Hit = true;
                         return true;
@@ -154,7 +156,8 @@ public class sensors : MonoBehaviour
 
                 for(int i = 0; i <= rayResolution; i++)
                 {
-                    Gizmos.DrawLine(Vector3.zero, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward * raycastLength);
+                    Vector3 rayRay = Quaternion.Euler(0f, halfAngle + (angleIncrement * i), 0f) * Vector3.forward;
+                    Gizmos.DrawRay( rayOrigin.localPosition, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward * raycastLength);
                     currentAngle += angleIncrement;
                 }
                 break;

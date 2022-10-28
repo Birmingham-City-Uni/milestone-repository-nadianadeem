@@ -24,11 +24,23 @@ public class WanderFindBoidState : State
         gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
         randX = Random.Range(0, gridComp.gridSizeX-1);
         randY = Random.Range(0, gridComp.gridSizeY-1);
+        lastLocation = gridComp.grid[randX, randY].worldPosition;
     }
 
     public override void ReEnter()
     {
         Debug.Log("Re-entering find boid.");
+        if (lastLocation != null)
+        {
+            agent.Move(speed, lastLocation);
+            if (Vector3.Distance(agent.transform.position, lastLocation) < 0.5f)
+            {
+                IsReEntering = false;
+                randX = Random.Range(0, gridComp.gridSizeX - 1);
+                randY = Random.Range(0, gridComp.gridSizeY - 1);
+                lastLocation = gridComp.grid[randX, randY].worldPosition;
+            }
+        }
     }
 
     public override void Execute()
@@ -41,12 +53,14 @@ public class WanderFindBoidState : State
             {
                 randX = Random.Range(0, gridComp.gridSizeX - 1);
                 randY = Random.Range(0, gridComp.gridSizeY - 1);
+                lastLocation = gridComp.grid[randX, randY].worldPosition;
             }
         }
         else
         {
             randX = Random.Range(0, gridComp.gridSizeX - 1);
             randY = Random.Range(0, gridComp.gridSizeY - 1);
+            lastLocation = gridComp.grid[randX, randY].worldPosition;
         }
     }
 

@@ -22,6 +22,7 @@ public class AttackState : State
     public override void Execute()
     {
         Debug.Log("Executing Attack");
+        agent.Move(10f, agent.sensor.info.point);
     }
 
     public override void Exit()

@@ -9,8 +9,7 @@ public class MiniBomb : Agent
     public IdleWanderState idle;
     public DieState die;
 
-    sensors sensor;
-    bool isExplosionReady = false;
+    private bool isReadyToDie = false;
 
     // Start is called before the first frame update
     public override void Start()
@@ -28,20 +27,18 @@ public class MiniBomb : Agent
     {
         stateManager.Update();
 
-        if (idle.currentReEnteringTime <= 0)
+        if ((sensor.Hit == true) && sensor.info.transform.tag == "Player" && (stateManager.GetCurrStateOnStack().GetType() == typeof(IdleWanderState)))
         {
-            if ((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() != typeof(AttackState)))
-            {
-                stateManager.PushState(attack);
-            }
-
-            if (isExplosionReady)
-            {
-                stateManager.PushState(die);
-            }
+            stateManager.PushState(attack);
         }
 
-        if ((sensor.Hit == false) && (stateManager.GetCurrStateOnStack().GetType() != typeof(IdleWanderState)))
+        if (!isReadyToDie && Vector3.Distance(this.transform.position, sensor.info.point) < 1f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
+        {
+            stateManager.PushState(die);
+            isReadyToDie = true;
+        }
+
+        if (stateManager.GetCurrStateOnStack().GetType() == typeof(SpawnState))
         {
             stateManager.PushState(idle);
         }

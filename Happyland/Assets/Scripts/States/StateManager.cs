@@ -74,7 +74,7 @@ public class StateManager
         {
             if (GetCurrStateOnStack().IsReEntering)
             {
-                GetCurrStateOnStack().ReEnteringTime -= Time.deltaTime;
+                GetCurrStateOnStack().currentReEnteringTime -= Time.deltaTime;
                 GetCurrStateOnStack().ReEnter();
             }
             else if (GetCurrStateOnStack() != null || (GetCurrStateOnStack().currentReEnteringTime > 0 && !GetCurrStateOnStack().IsReEntering))

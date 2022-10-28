@@ -16,11 +16,13 @@ public class WanderGoToBoidState : State
     public override void ReEnter()
     {
         Debug.Log("Re-entering go to boid.");
+        IsReEntering = false;
     }
 
     public override void Execute()
     {
         Debug.Log("Executing go to boid.");
+        agent.Move(10f, agent.sensor.info.point);
     }
 
     public override void Exit()

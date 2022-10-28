@@ -7,7 +7,7 @@ public class Agent : MonoBehaviour
     [Header("Agent Settings")]
     public StateManager stateManager;
     public Vector3 oldWaypoint;
-
+    public sensors sensor;
     public Pathfinding pathfindingComponent;
 
     public bool Move(float _maxSpeed, Vector3 _waypoint)

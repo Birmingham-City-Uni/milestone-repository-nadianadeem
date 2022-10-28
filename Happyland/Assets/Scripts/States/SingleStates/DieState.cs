@@ -15,7 +15,7 @@ public class DieState : State
 
     public override void ReEnter()
     {
-        Debug.Log("Entering Idle");
+        Debug.Log("Entering Die");
     }
 
     public override void Execute()
