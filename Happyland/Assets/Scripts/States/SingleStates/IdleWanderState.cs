@@ -7,8 +7,6 @@ public class IdleWanderState : State
     public WanderGoToBoidState goToBoidState;
     public WanderScareBoidState scareBoidState;
 
-    protected bool isBoidFound = false;
-
     public IdleWanderState(Agent owner, StateManager sm) : base(owner, sm)
     {
         wanderStateManager = new StateManager();
@@ -36,18 +34,20 @@ public class IdleWanderState : State
 
         if (findBoidState.currentReEnteringTime <= 0)
         {
-            if ((agent.sensor.Hit == true) && agent.sensor.info.transform.tag == "boid" && Vector3.Distance(agent.transform.position, agent.sensor.info.point) < 1f && (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderGoToBoidState)))
+            if ((agent.sensor.Hit == true) && agent.sensor.info.transform.tag == "boid")
             {
-                wanderStateManager.PushState(scareBoidState);
-            }
-            
-            if (!isBoidFound && (agent.sensor.Hit == true) && agent.sensor.info.transform.tag == "boid" && (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderFindBoidState)))
-            {
-                wanderStateManager.PushState(goToBoidState);
-                scareBoidState.isComplete = false;
+                if (Vector3.Distance(agent.transform.position, agent.sensor.info.point) < 1f && (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderGoToBoidState)))
+                {
+                    wanderStateManager.PushState(scareBoidState);
+                }
+
+                if (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderFindBoidState))
+                {
+                    wanderStateManager.PushState(goToBoidState);
+                    scareBoidState.isComplete = false;
+                }
             }
         }
-
 
         if (scareBoidState.isComplete)
         {
