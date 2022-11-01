@@ -34,10 +34,11 @@ public class IdleWanderState : State
 
         if (findBoidState.currentReEnteringTime <= 0)
         {
-            if ((agent.sensor.Hit == true) && agent.sensor.info.transform.tag == "boid")
+            if ((agent.sensor.Hit == true) && agent.sensor.info.transform.CompareTag("boid"))
             {
                 if (Vector3.Distance(agent.transform.position, agent.sensor.info.point) < 1f && (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderGoToBoidState)))
                 {
+                    wanderStateManager.PopState();
                     wanderStateManager.PushState(scareBoidState);
                 }
 
@@ -51,7 +52,6 @@ public class IdleWanderState : State
 
         if (scareBoidState.isComplete)
         {
-            wanderStateManager.PopState();
             wanderStateManager.PopState();
         }
     }

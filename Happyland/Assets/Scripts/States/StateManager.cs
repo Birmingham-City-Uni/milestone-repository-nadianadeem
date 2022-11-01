@@ -10,6 +10,10 @@ public class StateManager
     public State currState { get; private set; }
     private Stack stack;
 
+    public SpawnState spawnState;
+    public AttackState attackState;
+    public DieState dieState;
+
     //Stack based methods
     public State GetCurrStateOnStack()
     {
@@ -40,6 +44,28 @@ public class StateManager
         else return false;
     }
 
+    public bool PushAttackState()
+    {
+        if (stack.Peek() != attackState)
+        {
+            stack.Push(attackState);
+            GetCurrStateOnStack().Enter();
+            return true;
+        }
+        else return false;
+    }
+
+    public bool PushDieState()
+    {
+        if (stack.Peek() != dieState)
+        {
+            stack.Push(dieState);
+            GetCurrStateOnStack().Enter();
+            return true;
+        }
+        else return false;
+    }
+
     //Non Stack methods
 
     public void ChangeState(State newState)
@@ -64,6 +90,20 @@ public class StateManager
         else
         {
             ChangeState(startState);
+        }
+    }
+
+    public void InitSpawn()
+    {
+        if (IsStackBased)
+        {
+            this.stack = new Stack();
+            stack.Push(spawnState);
+            spawnState.Enter();
+        }
+        else
+        {
+            ChangeState(spawnState);
         }
     }
 

@@ -41,6 +41,13 @@ public class Agent : MonoBehaviour
         return false;
     }
 
+    public void Awake()
+    {
+        stateManager.spawnState = new SpawnState(this, stateManager);
+        stateManager.attackState = new AttackState(this, stateManager);
+        stateManager.dieState = new DieState(this, stateManager);
+    }
+
     // Start is called before the first frame update
     public virtual void Start()
     {

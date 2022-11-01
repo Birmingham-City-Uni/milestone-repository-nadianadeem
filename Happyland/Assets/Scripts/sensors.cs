@@ -156,7 +156,6 @@ public class sensors : MonoBehaviour
 
                 for(int i = 0; i <= rayResolution; i++)
                 {
-                    Vector3 rayRay = Quaternion.Euler(0f, halfAngle + (angleIncrement * i), 0f) * Vector3.forward;
                     Gizmos.DrawRay( rayOrigin.localPosition, Quaternion.Euler(new Vector3(0, currentAngle, 0)) * Vector3.forward * raycastLength);
                     currentAngle += angleIncrement;
                 }
