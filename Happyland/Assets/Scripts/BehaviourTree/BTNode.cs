@@ -11,8 +11,10 @@ public abstract class BTNode : ScriptableObject
         Success
     }
 
-    public BTState state = BTState.Running;
-    public bool started = false;
+    [HideInInspector] public BTState state = BTState.Running;
+    [HideInInspector] public bool started = false;
+    [HideInInspector] public string guid;
+    [HideInInspector] public Vector2 position;
 
     public BTState Update()
     {
@@ -31,6 +33,11 @@ public abstract class BTNode : ScriptableObject
         }
 
         return state;
+    }
+
+    public virtual BTNode Clone()
+    {
+        return Instantiate(this);
     }
 
     protected abstract void OnStart();

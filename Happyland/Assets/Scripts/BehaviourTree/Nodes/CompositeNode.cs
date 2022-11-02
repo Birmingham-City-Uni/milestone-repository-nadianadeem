@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompositeNode : MonoBehaviour
+public abstract class CompositeNode : BTNode
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<BTNode> children = new List<BTNode>();
 
-    // Update is called once per frame
-    void Update()
+    public override BTNode Clone()
     {
-        
+        CompositeNode node = Instantiate(this);
+        node.children = children.ConvertAll(c => c.Clone());
+        return node;
     }
 }
