@@ -47,20 +47,23 @@ public class WanderFindBoidState : State
     {
         Debug.Log("Executing find boid.");
         
-        if(agent.Move(speed, gridComp.grid[randX, randY].worldPosition))
+        if(gridComp.grid[randX, randY].worldPosition != null)
         {
-            if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)
+            if (agent.Move(speed, gridComp.grid[randX, randY].worldPosition))
+            {
+                if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)
+                {
+                    randX = Random.Range(0, gridComp.gridSizeX - 1);
+                    randY = Random.Range(0, gridComp.gridSizeY - 1);
+                    lastLocation = gridComp.grid[randX, randY].worldPosition;
+                }
+            }
+            else
             {
                 randX = Random.Range(0, gridComp.gridSizeX - 1);
                 randY = Random.Range(0, gridComp.gridSizeY - 1);
                 lastLocation = gridComp.grid[randX, randY].worldPosition;
             }
-        }
-        else
-        {
-            randX = Random.Range(0, gridComp.gridSizeX - 1);
-            randY = Random.Range(0, gridComp.gridSizeY - 1);
-            lastLocation = gridComp.grid[randX, randY].worldPosition;
         }
     }
 

@@ -25,7 +25,7 @@ public class Agent : MonoBehaviour
 
         Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
 
-        if (pathfindingComponent.grid.path.Count > 0)
+        if (pathfindingComponent.grid.path.Count > 0 && pathfindingComponent.grid.path != null)
         {
             this.transform.LookAt(pathfindingComponent.grid.path[0].worldPosition);
             this.transform.Translate(targetVelocity, Space.World);
