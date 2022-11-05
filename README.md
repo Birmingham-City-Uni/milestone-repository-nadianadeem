@@ -25,6 +25,9 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 <h4> Main Boss </h4>
 
 <h2> Weekly Development Log </h2>
+<h4> 03/11/2022 </h4>
+Created more nodes for the behaviour tree.
+
 <h4> 27/10/2022 </h4>
 Implemented costs for enemies traversing water. I also finished the implementation of the mini bomb FSM and fixed a bug to do with the re-entering phase of a state when stack based. Made some revisions worked on the feedback from Carlo, which included getting rid of some redudant code and allowing the state manager to have common states which it could push and changed to comparing the tag rather than getting the tag and comparing strings. 
 
