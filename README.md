@@ -17,8 +17,8 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 <h4> Boid Implementation </h4>
 
 <h4> Enemies </h4>
-<h5> Finite State Machine Design For Target Enemy </h5>
-<img src = "AIPhotos/TargetBoardFSMDesignV3.PNG" title ="Design Plan For Target Board">
+<h5> Behaviour Tree For Target Enemy </h5>
+<img src = "AIPhotos/TargetBoardBT.png" title ="Design Plan For Target Board">
 <h5> Finite State Machine Design For Mini Bomb </h5>
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
 
@@ -26,7 +26,7 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 
 <h2> Weekly Development Log </h2>
 <h4> 03/11/2022 </h4>
-Created more nodes for the behaviour tree. Added runtime highlighting for the behaviour tree to show success failure and whether a node is currently running. Nodes can now pass data to one another and types of nodes are highlighted a different colour in the behaviour tree editor view. The undo and redo functions also work in the behaviour tree editor view as well.
+Created more nodes for the behaviour tree - 15 nodes total. Added runtime highlighting for the behaviour tree to show success failure and whether a node is currently running. Nodes can now pass data to one another and types of nodes are highlighted a different colour in the behaviour tree editor view. The undo and redo functions also work in the behaviour tree editor view as well. Implemented the behaviour tree for the Target Board enemy. Still need to implement the actual action for "evade", "die" and "HasHealth" nodes.
 
 <h4> 27/10/2022 </h4>
 Implemented costs for enemies traversing water. I also finished the implementation of the mini bomb FSM and fixed a bug to do with the re-entering phase of a state when stack based. Made some revisions worked on the feedback from Carlo, which included getting rid of some redudant code and allowing the state manager to have common states which it could push. Then I changed some code to compare the tag rather than getting the tag and comparing strings. 
