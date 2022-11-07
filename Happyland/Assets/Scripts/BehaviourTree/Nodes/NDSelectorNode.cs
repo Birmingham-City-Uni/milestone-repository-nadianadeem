@@ -7,7 +7,7 @@ public class NDSelectorNode : CompositeNode
     public int current;
     protected override void OnStart()
     {
-        current = 0;
+        current = Random.Range(0, children.Count);
     }
 
     protected override void OnStop()
@@ -16,18 +16,17 @@ public class NDSelectorNode : CompositeNode
 
     protected override BTState OnUpdate()
     {
-        current = Random.Range(0, children.Count);
         var child = children[current];
         switch (child.Update())
         {
             case BTState.Running:
-                return BTState.Running;
+                break;
             case BTState.Failure:
                 return BTState.Failure;
             case BTState.Success:
                 return BTState.Success;
         }
 
-        return current == children.Count ? BTState.Success : BTState.Running;
+        return BTState.Running;
     }
 }

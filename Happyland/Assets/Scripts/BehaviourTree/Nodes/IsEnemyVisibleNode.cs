@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class IsEnemyVisibleNode : ActionNode
 {
-    public sensors sensor;
-
     protected override void OnStart()
-    { 
+    {
+        blackboard.moveToPosition = this.position;
     }
 
     protected override void OnStop()
@@ -16,8 +15,9 @@ public class IsEnemyVisibleNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if (sensor.Hit == true && sensor.info.transform.CompareTag("Player"))
+        if (agent.sensor.Hit == true && agent.sensor.info.transform.CompareTag("Player"))
         {
+            blackboard.moveToPosition = agent.sensor.info.transform.position;
             return BTState.Success;
         }
 
