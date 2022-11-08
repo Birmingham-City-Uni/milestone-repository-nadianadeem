@@ -51,6 +51,7 @@ public class WanderFindBoidState : State
         {
             if (agent.Move(speed, gridComp.grid[randX, randY].worldPosition))
             {
+                agent.agentAnimator.SetBool("IsMoving", true);
                 if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)
                 {
                     randX = Random.Range(0, gridComp.gridSizeX - 1);

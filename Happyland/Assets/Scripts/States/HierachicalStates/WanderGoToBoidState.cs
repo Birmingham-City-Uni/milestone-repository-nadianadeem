@@ -23,6 +23,7 @@ public class WanderGoToBoidState : State
     {
         Debug.Log("Executing go to boid.");
         agent.Move(10f, agent.sensor.info.point);
+        agent.agentAnimator.SetBool("IsMoving", true);
     }
 
     public override void Exit()

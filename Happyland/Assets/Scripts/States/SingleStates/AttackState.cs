@@ -23,6 +23,7 @@ public class AttackState : State
     {
         Debug.Log("Executing Attack");
         agent.Move(10f, agent.sensor.info.point);
+        agent.agentAnimator.SetBool("IsMoving", true);
     }
 
     public override void Exit()

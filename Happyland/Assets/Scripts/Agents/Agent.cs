@@ -7,6 +7,7 @@ public class Agent : MonoBehaviour
     [Header("Agent Settings")]
     public StateManager stateManager;
     public Vector3 oldWaypoint;
+    public Animator agentAnimator;
     public sensors sensor;
     public Pathfinding pathfindingComponent;
 

@@ -40,17 +40,19 @@ public class IdleWanderState : State
                 {
                     wanderStateManager.PopState();
                     wanderStateManager.PushState(scareBoidState);
+                    scareBoidState.currentReEnteringTime = ReEnteringTime;
                 }
 
-                if (wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderFindBoidState))
+                if (scareBoidState.currentReEnteringTime <= 0 && wanderStateManager.GetCurrStateOnStack().GetType() == typeof(WanderFindBoidState))
                 {
                     wanderStateManager.PushState(goToBoidState);
                     scareBoidState.isComplete = false;
+                    scareBoidState.currentReEnteringTime = ReEnteringTime;
                 }
             }
         }
 
-        if (scareBoidState.isComplete)
+        if (scareBoidState.currentReEnteringTime <= 0 && scareBoidState.isComplete)
         {
             wanderStateManager.PopState();
         }
