@@ -86,6 +86,8 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        public Vector3 velocity;
+        public Vector3 currentPosition;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -204,6 +206,7 @@ namespace StarterAssets
 
         private void Move()
         {
+            Vector3 previousPos = transform.position;
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -262,6 +265,8 @@ namespace StarterAssets
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
+            currentPosition = targetDirection;
+            velocity = targetDirection - previousPos;
         }
 
         private void JumpAndGravity()

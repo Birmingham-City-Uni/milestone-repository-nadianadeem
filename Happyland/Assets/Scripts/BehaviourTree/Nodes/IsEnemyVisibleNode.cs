@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class IsEnemyVisibleNode : ActionNode
 {
@@ -15,9 +16,10 @@ public class IsEnemyVisibleNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if (agent.sensor.Hit == true && agent.sensor.info.transform.CompareTag("Player"))
+        if (agent.sensor.Hit == true && agent.sensor.info.transform.gameObject.CompareTag("Player"))
         {
             blackboard.moveToPosition = agent.sensor.info.transform.position;
+            blackboard.evadeObject = agent.sensor.info.transform.GetComponent<ThirdPersonController>();
             return BTState.Success;
         }
 

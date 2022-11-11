@@ -21,12 +21,12 @@ public class MiniBomb : Agent
     {
         stateManager.Update();
 
-        if ((sensor.Hit == true) && sensor.info.transform.CompareTag("Player") && (stateManager.GetCurrStateOnStack().GetType() == typeof(IdleWanderState)))
+        if ((sensor.Hit == true) && sensor.info.collider.gameObject.CompareTag("Player") && (stateManager.GetCurrStateOnStack().GetType() == typeof(IdleWanderState)))
         {
             stateManager.PushAttackState();
         }
 
-        if (!isReadyToDie && Vector3.Distance(this.transform.position, sensor.info.point) < 1f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
+        if (!isReadyToDie && Vector3.Distance(this.transform.position, sensor.info.point) < 2f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
         {
             stateManager.PushDieState();
             isReadyToDie = true;

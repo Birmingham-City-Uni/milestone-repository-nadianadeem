@@ -13,14 +13,14 @@ public class WanderScareBoidState : State
     {
         Debug.Log("Entering scare boid.");
         isComplete = true;
-        agent.agentAnimator.SetTrigger("Attack");
+        agent.agentAnimator.SetTrigger("Scare");
     }
 
     public override void ReEnter()
     {
         Debug.Log("Re-entering scare boid.");
         IsReEntering = false;
-        agent.agentAnimator.SetTrigger("Attack");
+        agent.agentAnimator.SetTrigger("Scare");
         currentReEnteringTime -= Time.deltaTime;
     }
 

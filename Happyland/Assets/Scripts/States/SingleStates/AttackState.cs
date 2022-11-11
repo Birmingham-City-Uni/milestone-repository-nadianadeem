@@ -22,8 +22,12 @@ public class AttackState : State
     public override void Execute()
     {
         Debug.Log("Executing Attack");
-        agent.Move(10f, agent.sensor.info.point);
-        agent.agentAnimator.SetBool("IsMoving", true);
+
+        if ((agent.sensor.Hit == true) && agent.sensor.info.collider.gameObject.CompareTag("Player"))
+        {
+            agent.Arrive(20f, agent.sensor.info.point);
+            agent.agentAnimator.SetBool("IsMoving", true);
+        }
     }
 
     public override void Exit()

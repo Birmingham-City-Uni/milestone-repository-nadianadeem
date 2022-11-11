@@ -27,7 +27,7 @@ public class WanderState : State
         Debug.Log("Re-entering wander state");
         if (lastLocation != null)
         {
-            agent.Move(speed, lastLocation);
+            agent.MoveTo(speed, lastLocation);
             if ((agent.transform.position - lastLocation).magnitude < 0.1f)
             {
                 Wander();
@@ -39,7 +39,7 @@ public class WanderState : State
     public override void Execute()
     {
         Debug.Log("Updating wander state");
-        agent.Move(speed, wp);
+        agent.MoveTo(speed, wp);
         if ((agent.transform.position - wp).magnitude < 0.1f)
         {
             Wander();
