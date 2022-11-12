@@ -9778,9 +9778,11 @@ GameObject:
   - component: {fileID: 5136725146570867881}
   - component: {fileID: -4434688450843369146}
   - component: {fileID: -2743571840670558644}
+  - component: {fileID: 8646934448786006462}
+  - component: {fileID: 6331516327023515359}
   m_Layer: 0
   m_Name: Boom
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9794,7 +9796,7 @@ Transform:
   m_GameObject: {fileID: 4914716930404006884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3.443464, y: 3.443464, z: 3.443464}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7512824339732945673}
@@ -14677,6 +14679,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae79ce37a50a3249be8b8c98f58d496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8646934448786006462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914716930404006884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6331516327023515359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914716930404006884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38779a34b575ddf47bcb0734339e1cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!1 &8469629204698112231
 GameObject:
   m_ObjectHideFlags: 0

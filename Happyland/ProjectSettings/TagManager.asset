@@ -7,6 +7,9 @@ TagManager:
   - CinemachineTarget
   - Grid
   - boid
+  - Sword
+  - bomb
+  - Explosion
   layers:
   - Default
   - TransparentFX

@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class DieNode : ActionNode
 {
+    private Animator animator;
     protected override void OnStart()
     {
-        agent.GetComponent<Animator>().SetTrigger("Die");
+        animator = agent.GetComponent<Animator>();
+        animator.SetTrigger("Die");
     }
 
     protected override void OnStop()
     {
-        Destroy(agent);
     }
 
     protected override BTState OnUpdate()
     {
-        return BTState.Success;
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Die") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+            Destroy(agent.gameObject);
+            return BTState.Success;
+        }
+
+        return BTState.Running;
     }
 }
