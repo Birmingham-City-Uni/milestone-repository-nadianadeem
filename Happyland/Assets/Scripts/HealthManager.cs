@@ -46,6 +46,27 @@ public class HealthManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (isEnemy && Timer < 0)
+        {
+            if (collision.gameObject.CompareTag("Sword"))
+            {
+                if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Heavy Attack"))
+                {
+                    health -= playerHeavyAttackDmg;
+                    Timer = 0.5f;
+                }
+
+                if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Quick Attack"))
+                {
+                    health -= playerQuickAttackDmg;
+                    Timer = 0.5f;
+                }
+            }
+        }
         else
         {
             if (collision.gameObject.CompareTag("Explosion"))
