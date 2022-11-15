@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 77
+  controlID: 58
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 315
     height: 567
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 567
     width: 1532
     height: 372
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 78
+  controlID: 64
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 4714
+  controlID: 65
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimatorControllerTool
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -270,15 +270,15 @@ MonoBehaviour:
     height: 567
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 19}
   - {fileID: 15}
   - {fileID: 14}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 2
-  m_LastSelected: 4
+  m_Selected: 4
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -435,14 +435,14 @@ MonoBehaviour:
     - {fileID: 1107240124866355324, guid: 0fb40ce8da2f81044ae9e76a8705897f, type: 2}
     - {fileID: 1107839582382677714, guid: 04768899646c35e4585fed52922bca60, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.6303279
+    - e00: 0.61031747
       e01: 0
       e02: 0
-      e03: 178.88524
+      e03: 173.68254
       e10: 0
-      e11: 0.6303279
+      e11: 0.61031747
       e12: 0
-      e13: 111.991394
+      e13: 113.12698
       e20: 0
       e21: 0
       e22: 1
@@ -451,14 +451,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.797311
+    - e00: 0.69331396
       e01: 0
       e02: 0
-      e03: 107.41995
+      e03: 142.97385
       e10: 0
-      e11: 0.797311
+      e11: 0.69331396
       e12: 0
-      e13: 54.60959
+      e13: 89.8779
       e20: 0
       e21: 0
       e22: 1
@@ -467,14 +467,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.79361635
+    - e00: 0.6194805
       e01: 0
       e02: 0
-      e03: -151.11792
+      e03: -120.50647
       e10: 0
-      e11: 0.79361635
+      e11: 0.6194805
       e12: 0
-      e13: 231.64313
+      e13: 149.00003
       e20: 0
       e21: 0
       e22: 1
@@ -572,22 +572,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Meshtint Free Knight/Controllers
+    - Assets/eretichable Technologies/Cartoon explosion BOOM Weapons Gun VFX/Prefab
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Meshtint Free Knight/Controllers
+  - Assets/eretichable Technologies/Cartoon explosion BOOM Weapons Gun VFX/Prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\milestone-repository-nadianadeem\Happyland
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b4b10000
-    m_LastClickedID: 45492
-    m_ExpandedIDs: 0000000024ad0000d6ae0000d8ae0000e4ae000024af000078af000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: a6611100
+    m_LastClickedID: 1139110
+    m_ExpandedIDs: 000000002cad0000d4ae0000d6ae0000e4ae00003eaf0000a061110000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,7 +615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000024ad0000
+    m_ExpandedIDs: 000000002cad0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,8 +640,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0aaa0000
-    m_LastClickedInstanceID: 43530
+    m_SelectedInstanceIDs: aecaffff
+    m_LastClickedInstanceID: -13650
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c6a60000524e0100129a02000c9a0200189a020078f20100ca1bfeff968bffff
     m_RenameOverlay:
@@ -734,8 +734,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 73
+    x: 0
+    y: 19
     width: 314
     height: 546
   m_ViewDataDictionary: {fileID: 0}
@@ -744,10 +744,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0aaa0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: defaffffcea80000daa80000
+      scrollPos: {x: 0, y: 180}
+      m_SelectedIDs: aecaffff
+      m_LastClickedID: -13650
+      m_ExpandedIDs: ccccffffd0ccffffd4ccffffd8ccffff00cdffff04cdffff08cdffff0ccdffff38cdffffdefaffffea730000f2890000348a0000009b0000d4a80000e0a80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1019,9 +1019,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 15.37, y: 0.13800669, z: 0.7360615}
+    m_Target: {x: -16.68288, y: 0.5795673, z: -5.3276}
     speed: 2
-    m_Value: {x: 15.37, y: 0.13800669, z: 0.7360615}
+    m_Value: {x: -16.68288, y: 0.5795673, z: -5.3276}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1068,13 +1068,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.01515776, y: 0.9710581, z: -0.22880165, w: 0.06978696}
+    m_Target: {x: 0.005226826, y: 0.98177373, z: -0.18815371, w: 0.03355432}
     speed: 2
-    m_Value: {x: 0.0151547, y: 0.97086203, z: -0.22875546, w: 0.06977287}
+    m_Value: {x: 0.00522569, y: 0.9815604, z: -0.18811284, w: 0.03354703}
   m_Size:
-    m_Target: 1.7606107
+    m_Target: 1.4977375
     speed: 2
-    m_Value: 1.7606107
+    m_Value: 1.4977375
   m_Ortho:
     m_Target: 0
     speed: 2
