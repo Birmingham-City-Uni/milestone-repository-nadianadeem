@@ -12,6 +12,7 @@ TagManager:
   - Explosion
   - sounds
   - text
+  - agent
   layers:
   - Default
   - TransparentFX

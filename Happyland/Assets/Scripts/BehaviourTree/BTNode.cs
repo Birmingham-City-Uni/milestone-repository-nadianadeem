@@ -26,7 +26,11 @@ public abstract class BTNode : ScriptableObject
         {
             blackboard.stateNameplate = agent.GetComponentInChildren<TextMeshProUGUI>();
             OnStart();
-            blackboard.stateNameplate.text = this.GetType().ToString().Replace("Node", "");
+
+            if (blackboard.stateNameplate)
+            {
+                blackboard.stateNameplate.text = this.GetType().ToString().Replace("Node", "");
+            }
             started = true;
         }
 

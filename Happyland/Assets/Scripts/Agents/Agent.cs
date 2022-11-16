@@ -11,9 +11,18 @@ public class Agent : MonoBehaviour
     public Animator agentAnimator;
     public sensors sensor;
     public Pathfinding pathfindingComponent;
+    public bool gridHasChanged = false;
 
     private Vector3 finalDest;
     public bool calculateOnce;
+
+    public void Update()
+    {
+        if (gridHasChanged)
+        {
+            pathfindingComponent.UpdatePathfinding(oldWaypoint);
+        }
+    }
 
     public bool MoveTo(float _maxSpeed, Vector3 _waypoint)
     {
