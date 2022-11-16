@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class BTNode : ScriptableObject
 {
@@ -23,7 +24,9 @@ public abstract class BTNode : ScriptableObject
     {
         if (!started)
         {
+            blackboard.stateNameplate = agent.GetComponentInChildren<TextMeshProUGUI>();
             OnStart();
+            blackboard.stateNameplate.text = this.GetType().ToString().Replace("Node", "");
             started = true;
         }
 

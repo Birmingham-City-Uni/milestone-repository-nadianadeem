@@ -164,6 +164,11 @@ public class Agent : MonoBehaviour
         stateManager.dieState = new DieState(this, stateManager);
     }
 
+    public void PlaySoundWithDelay(int index, float time)
+    {
+        StartCoroutine(GameObject.FindGameObjectWithTag("sounds").GetComponent<SceneSound>().PlayDelaySound(index, time));
+    }
+
     // Start is called before the first frame update
     public virtual void Start()
     {
