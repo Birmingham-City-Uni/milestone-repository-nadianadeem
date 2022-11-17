@@ -10,6 +10,8 @@ public class Blackboard
 {
     public Vector3 moveToPosition;
 
+    public bool doesPlayerHaveHighHealth = true;
+
     public ThirdPersonController evadeObject;
 
     public TextMeshProUGUI stateNameplate;

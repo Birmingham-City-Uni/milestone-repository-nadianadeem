@@ -18,7 +18,9 @@ MonoBehaviour:
   position: {x: -526, y: 409.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   duration: 1
@@ -40,7 +42,9 @@ MonoBehaviour:
   position: {x: -127.00003, y: 146.99991}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-8898329033276550986
@@ -61,7 +65,9 @@ MonoBehaviour:
   position: {x: -230.03964, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   message: ATTACK
@@ -83,7 +89,9 @@ MonoBehaviour:
   position: {x: 162.96033, y: 278.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -110,7 +118,9 @@ MonoBehaviour:
   position: {x: 516.9424, y: -81.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-7487227697418322029
@@ -131,7 +141,9 @@ MonoBehaviour:
   position: {x: -526.2227, y: 279}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -157,7 +169,9 @@ MonoBehaviour:
   position: {x: 249, y: -106}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: 913483061241250500}
@@ -179,7 +193,9 @@ MonoBehaviour:
   position: {x: 610, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   message: MOVE AWAY
@@ -201,7 +217,9 @@ MonoBehaviour:
   position: {x: -52.039635, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: -4083345593525988912}
@@ -223,7 +241,9 @@ MonoBehaviour:
   position: {x: -52.039635, y: 529}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-3130600512028516408
@@ -244,7 +264,9 @@ MonoBehaviour:
   position: {x: 249, y: -376.12}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: 4097868797785153304}
@@ -266,7 +288,9 @@ MonoBehaviour:
   position: {x: 162.99997, y: 146.99991}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-2564836932959421236
@@ -287,7 +311,9 @@ MonoBehaviour:
   position: {x: -710.00006, y: 529}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-2291888906196148710
@@ -308,7 +334,9 @@ MonoBehaviour:
   position: {x: -896.03876, y: 409.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   message: 
@@ -330,7 +358,9 @@ MonoBehaviour:
   position: {x: 1225.2704, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &-934321732858001172
@@ -351,7 +381,9 @@ MonoBehaviour:
   position: {x: 1002.2995, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: 7018047394925611571}
@@ -373,7 +405,9 @@ MonoBehaviour:
   position: {x: 813, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: 5851809102540473927}
@@ -393,7 +427,9 @@ MonoBehaviour:
   treeState: 0
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   nodes:
   - {fileID: -3130600512028516408}
   - {fileID: -2832802865483988254}
@@ -440,7 +476,9 @@ MonoBehaviour:
   position: {x: 162.96033, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &531185900309672464
@@ -461,7 +499,9 @@ MonoBehaviour:
   position: {x: 562.99994, y: 146.99991}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -487,7 +527,9 @@ MonoBehaviour:
   position: {x: 248.99992, y: 14.936501}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -513,7 +555,9 @@ MonoBehaviour:
   position: {x: 345.96036, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   duration: 2
@@ -535,7 +579,9 @@ MonoBehaviour:
   position: {x: 713.00006, y: 279.00006}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -563,7 +609,9 @@ MonoBehaviour:
   position: {x: -710.24866, y: 410.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: -2564836932959421236}
@@ -585,7 +633,9 @@ MonoBehaviour:
   position: {x: 1451.7913, y: 410}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   duration: 1
@@ -607,7 +657,9 @@ MonoBehaviour:
   position: {x: 249.00002, y: -242.97612}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
@@ -632,7 +684,9 @@ MonoBehaviour:
   position: {x: 813, y: 538}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 
 --- !u!114 &7018047394925611571
@@ -653,6 +707,8 @@ MonoBehaviour:
   position: {x: 1001.99994, y: 537.99994}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 0
     evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
   agent: {fileID: 0}
   description: 

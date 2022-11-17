@@ -10,7 +10,6 @@ public class AttackNode : ActionNode
         agent.GetComponent<Animator>().SetTrigger("Attack");
         blackboard.stateNameplate.text = "Attack";
         agent.PlaySoundWithDelay(1, 0.45f);
-        
     }
 
     protected override void OnStop()

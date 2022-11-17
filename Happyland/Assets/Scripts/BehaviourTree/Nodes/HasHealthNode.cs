@@ -17,7 +17,7 @@ public class HasHealthNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if(agentHealth.health <= 0)
+        if(agentHealth.currentHealth <= 0)
         {
             return BTState.Failure;
         }

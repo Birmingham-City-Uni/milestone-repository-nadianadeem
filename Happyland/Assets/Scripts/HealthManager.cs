@@ -5,23 +5,25 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public bool isEnemy;
-    public int health = 100;
+    public int currentHealth = 100;
     Animator playerAnimator;
     public float Timer;
 
     public int playerHeavyAttackDmg = 65;
     public int playerQuickAttackDmg = 15;
+    public int StartingHealth = 100;
 
     private void Start()
     {
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        currentHealth = StartingHealth;
     }
 
     private void Update()
     {
         Timer -= Time.deltaTime;
 
-        if(!isEnemy && health <= 0)
+        if(!isEnemy && currentHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -35,13 +37,13 @@ public class HealthManager : MonoBehaviour
             {
                 if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Heavy Attack"))
                 {
-                    health -= playerHeavyAttackDmg;
+                    currentHealth -= playerHeavyAttackDmg;
                     Timer = 0.5f;
                 }
 
                 if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Quick Attack"))
                 {
-                    health -= playerQuickAttackDmg;
+                    currentHealth -= playerQuickAttackDmg;
                     Timer = 0.5f;
                 }
             }
@@ -56,26 +58,27 @@ public class HealthManager : MonoBehaviour
             {
                 if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Heavy Attack"))
                 {
-                    health -= playerHeavyAttackDmg;
+                    currentHealth -= playerHeavyAttackDmg;
                     Timer = 0.5f;
                 }
 
                 if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Quick Attack"))
                 {
-                    health -= playerQuickAttackDmg;
+                    currentHealth -= playerQuickAttackDmg;
                     Timer = 0.5f;
                 }
             }
         }
-        else
+        else if (Timer < 0)
         {
             if (collision.gameObject.CompareTag("Explosion"))
             {
                 Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
                 if (collisionDmgComp)
                 {
-                    health -= collisionDmgComp.damage;
+                    currentHealth -= collisionDmgComp.damage;
                     Timer = 0.5f;
+                    Destroy(collision.gameObject);
                 }
             }
 
@@ -84,10 +87,11 @@ public class HealthManager : MonoBehaviour
                 Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
                 if (collisionDmgComp && collision.transform.root.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                 {
-                    health -= collisionDmgComp.damage;
+                    currentHealth -= collisionDmgComp.damage;
                     Timer = 0.5f;
                 }
             }
         }
     }
 }
+

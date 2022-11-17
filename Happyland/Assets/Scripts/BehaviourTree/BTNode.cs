@@ -22,16 +22,21 @@ public abstract class BTNode : ScriptableObject
 
     public BTState Update()
     {
-        if (!started)
+        if(blackboard.stateNameplate == null)
         {
             blackboard.stateNameplate = agent.GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        if (!started)
+        {
+            
             OnStart();
+            started = true;
 
             if (blackboard.stateNameplate)
             {
                 blackboard.stateNameplate.text = this.GetType().ToString().Replace("Node", "");
             }
-            started = true;
         }
 
         state = OnUpdate();

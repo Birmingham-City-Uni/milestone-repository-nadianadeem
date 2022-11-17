@@ -41,7 +41,7 @@ public class Agent : MonoBehaviour
 
         if (pathfindingComponent.grid.path != null)
         {
-            if(pathfindingComponent.grid.path.Count > 0)
+            if(pathfindingComponent.grid.path.Count >= 0)
             {
                 Vector3 direction = pathfindingComponent.grid.path[0].worldPosition - transform.position;
                 direction.y = 0;
@@ -161,9 +161,7 @@ public class Agent : MonoBehaviour
             return true;
         }
 
-
         return false;
-        
     }
 
     public void Awake()

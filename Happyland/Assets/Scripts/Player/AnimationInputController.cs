@@ -55,7 +55,10 @@ public class AnimationInputController : MonoBehaviour
 
         foreach (GameObject obj in nameplates)
         {
-            obj.SetActive(IsDebugOn);
+            if(obj != null)
+            {
+                obj.SetActive(IsDebugOn);
+            }
         }
     }
 }
