@@ -17,6 +17,8 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 <h4> Boid Implementation </h4>
 
 <h4> Enemies </h4>
+<h5> Behaviour Tree For Boss </h5>
+<img src = "AIPhotos/BossBT.PNG" title ="Design Plan For Main Bpss">
 <h5> Behaviour Tree For Target Enemy </h5>
 <img src = "AIPhotos/TargetBoardBT.png" title ="Design Plan For Target Board">
 <h5> Finite State Machine Design For Mini Bomb </h5>
