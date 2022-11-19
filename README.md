@@ -27,6 +27,12 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 <h4> Main Boss </h4>
 
 <h2> Weekly Development Log </h2>
+<h4> 17/11/2022 </h4>
+Created the boss behaviour tree and tweaked collisions so they look more reactive.
+
+<h4> 10/11/2022 </h4>
+Implemented the steering behaviours seek, flee, evade and arrive. I implemented the scare animation for the bomb. I also implemented a health managed for the enemies and player as well as implemented sounds for attacking of both the player and enemies. I added in nameplates which will show the state of an enemy, it is also toggleable. I made the node grid dynamic at runtime so the map can be changed during the game and the enemies current path will change accordingly.
+
 <h4> 03/11/2022 </h4>
 Created more nodes for the behaviour tree - 15 nodes total. Added runtime highlighting for the behaviour tree to show success failure and whether a node is currently running. Nodes can now pass data to one another and types of nodes are highlighted a different colour in the behaviour tree editor view. The undo and redo functions also work in the behaviour tree editor view as well. Implemented the behaviour tree for the Target Board enemy. Still need to implement the actual action for "evade", "die" and "HasHealth" nodes.
 
