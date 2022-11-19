@@ -24,8 +24,6 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 <h5> Finite State Machine Design For Mini Bomb </h5>
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
 
-<h4> Main Boss </h4>
-
 <h2> Weekly Development Log </h2>
 <h4> 17/11/2022 </h4>
 Created the boss behaviour tree and tweaked collisions so they look more reactive.
