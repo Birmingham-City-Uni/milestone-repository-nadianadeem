@@ -16,7 +16,7 @@ public class MoveToNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if (agent.MoveTo(10, blackboard.moveToPosition))
+        if (agent.Seek(10, blackboard.moveToPosition))
         {
             if (Vector3.Distance(agent.transform.position, blackboard.moveToPosition) < 1f)
             {

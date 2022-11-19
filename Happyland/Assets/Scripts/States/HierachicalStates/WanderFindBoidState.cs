@@ -32,7 +32,7 @@ public class WanderFindBoidState : State
         Debug.Log("Re-entering find boid.");
         if (lastLocation != null)
         {
-            agent.MoveTo(speed, lastLocation);
+            agent.Seek(speed, lastLocation);
             if (Vector3.Distance(agent.transform.position, lastLocation) < 0.5f)
             {
                 IsReEntering = false;
@@ -49,7 +49,7 @@ public class WanderFindBoidState : State
         
         if(gridComp.grid[randX, randY].worldPosition != null)
         {
-            if (agent.MoveTo(speed, gridComp.grid[randX, randY].worldPosition))
+            if (agent.Seek(speed, gridComp.grid[randX, randY].worldPosition))
             {
                 agent.agentAnimator.SetBool("IsMoving", true);
                 if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)

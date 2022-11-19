@@ -8,10 +8,20 @@ public class Agent : MonoBehaviour
     [Header("Agent Settings")]
     public StateManager stateManager;
     public Vector3 oldWaypoint;
+    public Node lastNode;
     public Animator agentAnimator;
     public sensors sensor;
     public Pathfinding pathfindingComponent;
     public bool gridHasChanged = false;
+
+    [Header("Wander Settings")]
+    public float wanderRadius = 1.2f;
+
+    public float wanderDistance = 2f;
+
+    public float wanderJitter = 40f;
+
+    private Vector3 wanderTarget;
 
     private Vector3 finalDest;
     public bool calculateOnce;
@@ -24,7 +34,7 @@ public class Agent : MonoBehaviour
         }
     }
 
-    public bool MoveTo(float _maxSpeed, Vector3 _waypoint)
+    public bool Seek(float _maxSpeed, Vector3 _waypoint)
     {
         if(_waypoint != oldWaypoint)
         {
@@ -39,11 +49,11 @@ public class Agent : MonoBehaviour
 
         Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
 
-        if (pathfindingComponent.grid.path != null)
+        if (pathfindingComponent.path != null)
         {
-            if(pathfindingComponent.grid.path.Count >= 0)
+            if(pathfindingComponent.path.Count > 0)
             {
-                Vector3 direction = pathfindingComponent.grid.path[0].worldPosition - transform.position;
+                Vector3 direction = pathfindingComponent.path[0].worldPosition - transform.position;
                 direction.y = 0;
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), _maxSpeed * Time.deltaTime);
@@ -52,9 +62,9 @@ public class Agent : MonoBehaviour
 
                 transform.position += moveVector;
 
-                if (Vector3.Distance(this.transform.position, pathfindingComponent.grid.path[0].worldPosition) < 0.2f)
+                if (Vector3.Distance(this.transform.position, pathfindingComponent.path[0].worldPosition) < 0.2f)
                 {
-                    pathfindingComponent.grid.path.RemoveAt(0);
+                    pathfindingComponent.path.RemoveAt(0);                  
                 }
 
                 return true;
@@ -64,22 +74,22 @@ public class Agent : MonoBehaviour
         return false;
     }
 
-    public bool MoveAway(float _maxSpeed, Vector3 _waypoint)
+    public bool Flee(float _maxSpeed, Vector3 _waypoint)
     {
         if (_waypoint != oldWaypoint && calculateOnce)
         {
             Vector3 direction = transform.position - _waypoint;
             direction.y = 0;
             finalDest = transform.position + direction.normalized * _maxSpeed / 2;
-            MoveTo(_maxSpeed, finalDest);
+            Seek(_maxSpeed, finalDest);
             calculateOnce = false;
         }
         else
         {
-            MoveTo(_maxSpeed, finalDest);
+            Seek(_maxSpeed, finalDest);
         }
 
-        if (pathfindingComponent.grid.path.Count <= 1)
+        if (pathfindingComponent.path.Count <= 1)
         {
             calculateOnce = true;
             return true;
@@ -103,9 +113,9 @@ public class Agent : MonoBehaviour
 
         Vector3 targetVelocity = _maxSpeed * this.transform.forward * Time.deltaTime;
 
-        if (pathfindingComponent.grid.path.Count > 0 && pathfindingComponent.grid.path != null)
+        if (pathfindingComponent.path.Count > 0 && pathfindingComponent.path != null)
         {
-            Vector3 direction = pathfindingComponent.grid.path[0].worldPosition - transform.position;
+            Vector3 direction = pathfindingComponent.path[0].worldPosition - transform.position;
             direction.y = 0;
 
             float distance = direction.magnitude;
@@ -119,9 +129,9 @@ public class Agent : MonoBehaviour
             Vector3 moveVector = direction.normalized * Time.deltaTime * speed;
             transform.position += moveVector;
 
-            if (Vector3.Distance(this.transform.position, pathfindingComponent.grid.path[0].worldPosition) < 0.2f)
+            if (Vector3.Distance(this.transform.position, pathfindingComponent.path[0].worldPosition) < 0.2f)
             {
-                pathfindingComponent.grid.path.RemoveAt(0);
+                pathfindingComponent.path.RemoveAt(0);
             }
 
             return true;
@@ -147,15 +157,15 @@ public class Agent : MonoBehaviour
 
             finalDest = transform.position - direction.normalized * _maxSpeed;
 
-            MoveTo(_maxSpeed, finalDest);
+            Seek(_maxSpeed, finalDest);
             calculateOnce = false;
         }
         else
         {
-            MoveTo(_maxSpeed, finalDest);
+            Seek(_maxSpeed, finalDest);
         }
 
-        if(pathfindingComponent.grid.path.Count <= 1)
+        if(pathfindingComponent.path.Count <= 1)
         {
             calculateOnce = true;
             return true;
@@ -164,11 +174,33 @@ public class Agent : MonoBehaviour
         return false;
     }
 
+    public void Wander(float _maxSpeed)
+    {
+        //get the jitter for this time frame
+        float jitter = wanderJitter * Time.deltaTime;
+
+        //add a small random vector to the target's position
+        wanderTarget += new Vector3(Random.Range(-1f, 1f) * jitter, Random.Range(-1f, 1f) * jitter, 0f);
+
+        //make the wanderTarget fit on the wander circle again
+        wanderTarget.Normalize();
+        wanderTarget *= wanderRadius;
+
+        //move the target in front of the character
+        Vector3 targetPosition = transform.position + transform.right * wanderDistance + wanderTarget;
+
+        Seek(_maxSpeed, targetPosition);
+    }
+
     public void Awake()
     {
         stateManager.spawnState = new SpawnState(this, stateManager);
         stateManager.attackState = new AttackState(this, stateManager);
         stateManager.dieState = new DieState(this, stateManager);
+
+        //stuff for the wander behavior
+        float theta = Random.value * 2 * Mathf.PI;
+        wanderTarget = new Vector3(wanderRadius * Mathf.Cos(theta), wanderRadius * Mathf.Sin(theta), 0f);
     }
 
     public void PlaySoundWithDelay(int index, float time)

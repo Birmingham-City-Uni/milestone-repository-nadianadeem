@@ -16,10 +16,12 @@ public class Pathfinding : MonoBehaviour
 	public PathfindingAlgorithm pathfindingType = PathfindingAlgorithm.AStar;
 	public Transform seeker, target;
 	public Grid grid;
+	public List<Node> path;
 
 	void Awake()
 	{
 		grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
+		path = new List<Node>();
 	}
 
 	public void UpdatePathfinding( Vector3 targetPosition)
@@ -218,7 +220,6 @@ public class Pathfinding : MonoBehaviour
 
 	void RetracePath(Node startNode, Node endNode)
 	{
-		List<Node> path = new List<Node>();
 		Node currentNode = endNode;
 
 		while (currentNode != startNode)
@@ -227,9 +228,7 @@ public class Pathfinding : MonoBehaviour
 			currentNode = currentNode.parent;
 		}
 		path.Reverse();
-
 		grid.path = path;
-
 	}
 
 	int GetDistance(Node nodeA, Node nodeB)

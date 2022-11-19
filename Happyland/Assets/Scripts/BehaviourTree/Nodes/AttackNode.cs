@@ -9,7 +9,15 @@ public class AttackNode : ActionNode
         agent.GetComponent<Animator>().SetBool("IsMoving", false);
         agent.GetComponent<Animator>().SetTrigger("Attack");
         blackboard.stateNameplate.text = "Attack";
-        agent.PlaySoundWithDelay(1, 0.45f);
+
+        if (agent.name.Contains("Snake"))
+        {
+            agent.PlaySoundWithDelay(4, 0.0f);
+        }
+        else
+        {
+            agent.PlaySoundWithDelay(1, 0.45f);
+        }
     }
 
     protected override void OnStop()
