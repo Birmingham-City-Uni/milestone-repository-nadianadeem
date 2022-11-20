@@ -13,13 +13,9 @@ public class WanderFindBoidState : State
     {
     }
 
-    void Start()
-    {
-        pathfindingComponent = agent.GetComponent<Pathfinding>();
-    }
-
     public override void Enter()
     {
+        pathfindingComponent = agent.pathfindingComponent;
         Debug.Log("Entering find boid.");
         gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
         randX = Random.Range(0, gridComp.gridSizeX-1);
@@ -32,7 +28,7 @@ public class WanderFindBoidState : State
         Debug.Log("Re-entering find boid.");
         if (lastLocation != null)
         {
-            agent.Seek(speed, lastLocation);
+            agent.SeekAndAvoid(speed, lastLocation);
             if (Vector3.Distance(agent.transform.position, lastLocation) < 0.5f)
             {
                 IsReEntering = false;
@@ -47,12 +43,12 @@ public class WanderFindBoidState : State
     {
         Debug.Log("Executing find boid.");
         
-        if(gridComp.grid[randX, randY].worldPosition != null)
+        if(gridComp.grid[randX, randY].worldPosition != null && pathfindingComponent != null)
         {
-            if (agent.Seek(speed, gridComp.grid[randX, randY].worldPosition))
+            if (agent.SeekAndAvoid(speed, gridComp.grid[randX, randY].worldPosition))
             {
                 agent.agentAnimator.SetBool("IsMoving", true);
-                if (Vector3.Distance(agent.transform.position, gridComp.path[gridComp.path.Count - 1].worldPosition) < 1f)
+                if (pathfindingComponent.path.Count <  1)
                 {
                     randX = Random.Range(0, gridComp.gridSizeX - 1);
                     randY = Random.Range(0, gridComp.gridSizeY - 1);

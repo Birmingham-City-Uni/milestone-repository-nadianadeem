@@ -13,6 +13,7 @@ TagManager:
   - sounds
   - text
   - agent
+  - OutsideGrid
   layers:
   - Default
   - TransparentFX

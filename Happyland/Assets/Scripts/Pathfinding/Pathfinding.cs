@@ -220,6 +220,7 @@ public class Pathfinding : MonoBehaviour
 
 	void RetracePath(Node startNode, Node endNode)
 	{
+		path = new List<Node>();
 		Node currentNode = endNode;
 
 		while (currentNode != startNode)
