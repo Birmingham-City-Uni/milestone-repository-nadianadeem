@@ -29,7 +29,7 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 
 <h2> Weekly Development Log </h2>
 <h4> 17/11/2022 </h4>
-Created the boss behaviour tree and tweaked collisions so they look more reactive.
+Created the boss behaviour tree and tweaked collisions so they look more reactive. Designed a game narrative to make the experience more well rounded based on feedback from Carlo, also implemented the collision and wall avoidance as well as the wander steering mechanic based on feedback also. I have created a new NPC, which wanders around the secondary part of the map. 
 
 <h4> 10/11/2022 </h4>
 Implemented the steering behaviours seek, flee, evade and arrive. I implemented the scare animation for the bomb. I also implemented a health managed for the enemies and player as well as implemented sounds for attacking of both the player and enemies. I added in nameplates which will show the state of an enemy, it is also toggleable. I made the node grid dynamic at runtime so the map can be changed during the game and the enemies current path will change accordingly.
