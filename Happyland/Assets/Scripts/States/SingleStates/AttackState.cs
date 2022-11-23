@@ -11,18 +11,14 @@ public class AttackState : State
 
     public override void Enter()
     {
-        Debug.Log("Entering Attack");
     }
 
     public override void ReEnter()
     {
-        Debug.Log("Entering Idle");
     }
 
     public override void Execute()
     {
-        Debug.Log("Executing Attack");
-
         if ((agent.sensor.Hit == true) && agent.sensor.info.collider.gameObject.CompareTag("Player"))
         {
             agent.Arrive(20f, agent.sensor.info.point);
@@ -32,6 +28,5 @@ public class AttackState : State
 
     public override void Exit()
     {
-        Debug.Log("Exiting Attack");
     }
 }

@@ -11,28 +11,25 @@ public class WanderScareBoidState : State
 
     public override void Enter()
     {
-        Debug.Log("Entering scare boid.");
         isComplete = true;
         agent.agentAnimator.SetTrigger("Scare");
     }
 
     public override void ReEnter()
     {
-        Debug.Log("Re-entering scare boid.");
         IsReEntering = false;
         agent.agentAnimator.SetTrigger("Scare");
         currentReEnteringTime -= Time.deltaTime;
+        isComplete = true;
     }
 
     public override void Execute()
     {
-        Debug.Log("Executing scare boid.");
         currentReEnteringTime -= Time.deltaTime;
+        isComplete = true;
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting scare boid.");
-        isComplete = false;
     }
 }

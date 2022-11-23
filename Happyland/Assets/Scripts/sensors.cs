@@ -74,7 +74,7 @@ public class sensors : MonoBehaviour
                 }
                 break;
             case Type.BoxCast:
-                if(Physics.CheckBox(this.transform.position, new Vector3(boxExtents.x, boxExtents.y, raycastLength)/2, this.transform.rotation, hitMask, QueryTriggerInteraction.Ignore))
+                if(Physics.BoxCast(this.transform.position, new Vector3(boxExtents.x, boxExtents.y, raycastLength)/2, dir, out info, this.transform.rotation, raycastLength, hitMask, QueryTriggerInteraction.Ignore))
                 {
                     Hit = true;
                     return true;

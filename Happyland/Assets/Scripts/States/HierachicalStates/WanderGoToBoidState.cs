@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class WanderGoToBoidState : State
 {
+    public Vector3 dest;
     public WanderGoToBoidState(Agent owner, StateManager sm) : base(owner, sm)
     {
     }
 
     public override void Enter()
     {
-        Debug.Log("Entering go to boid.");
+        dest = new Vector3(agent.sensor.info.point.x, agent.transform.position.y, agent.sensor.info.point.z);
     }
 
     public override void ReEnter()
     {
-        Debug.Log("Re-entering go to boid.");
+        dest = new Vector3(agent.sensor.info.point.x, agent.transform.position.y, agent.sensor.info.point.z);
         IsReEntering = false;
     }
 
     public override void Execute()
     {
-        Debug.Log("Executing go to boid.");
-        agent.SeekAndAvoid(10f, agent.sensor.info.point);
+        if((agent.sensor.Hit == true) && agent.sensor.info.transform.CompareTag("boid"))
+        {
+            dest = new Vector3(agent.sensor.info.point.x, agent.transform.position.y, agent.sensor.info.point.z);
+        }
+        agent.SeekAndAvoid(15f, dest);
         agent.agentAnimator.SetBool("IsMoving", true);
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting go to boid.");
     }
 }

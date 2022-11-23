@@ -13,17 +13,14 @@ public class SeekState : State
 
     public override void Enter()
     {
-        Debug.Log("Entering seek state.");
     }
 
     public override void ReEnter()
     {
-        Debug.Log("Entering Idle");
     }
 
     public override void Execute()
     {
-        Debug.Log("Updating seek state.");
         seekFor -= Time.deltaTime;
         if(seekFor <= 0.0f)
         {
@@ -33,6 +30,5 @@ public class SeekState : State
 
     public override void Exit()
     {
-        Debug.Log("Exiting seek state.");
     }
 }

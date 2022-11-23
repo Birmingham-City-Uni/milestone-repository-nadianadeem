@@ -30,14 +30,12 @@ public class StackBasedAgent : Agent
         {
             if ((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() != typeof(SeekState)))
             {
-                Debug.Log("Hit");
                 stateManager.PushState(seek);
                 foundSeekMe = true;
             }
             
             if ((sensor.Hit == true) && (stateManager.GetCurrStateOnStack().GetType() == typeof(SeekState)) && foundSeekMe)
             {
-                Debug.Log("Hit");
                 stateManager.PopState();
             }
         }

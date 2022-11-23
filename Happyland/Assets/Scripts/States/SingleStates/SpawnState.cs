@@ -10,20 +10,16 @@ public class SpawnState : State
 
     public override void Enter()
     {
-        Debug.Log("Entering Spawn");
     }
     public override void ReEnter()
     {
-        Debug.Log("Entering Idle");
     }
 
     public override void Execute()
     {
-        Debug.Log("Executing Spawn");
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting Spawn");
     }
 }
