@@ -29,6 +29,7 @@ public class DieState : State
             {
                 bomb = GameObject.Instantiate(agent.gameObject.GetComponent<ExplosionHolder>().smallExplosionPrefab, agent.sensor.rayOrigin.transform.position, agent.transform.rotation);
                 isBombSpawned = true;
+                GameObject.FindGameObjectWithTag("WaveSpawner").GetComponent<WaveSpawner>().enemiesLeft--;
                 GameObject.FindGameObjectWithTag("sounds").GetComponent<SceneSound>().PlaySound(0);
                 GameObject.Destroy(agent.gameObject);
             }

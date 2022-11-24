@@ -9,7 +9,7 @@ public class GlobalFlock : MonoBehaviour
     public static float minFlockHeight = 0.4f;
     public static int airSizeX = 58;
     public static int airSizeY = 38;
-    public static int numBirds = 8;
+    public static int numBirds = 4;
     public static GameObject[] boids = new GameObject[numBirds];
     public static Vector3 goalPos = new Vector3(0, 0, 0);
 

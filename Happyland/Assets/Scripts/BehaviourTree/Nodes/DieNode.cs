@@ -9,6 +9,7 @@ public class DieNode : ActionNode
     {
         animator = agent.GetComponent<Animator>();
         animator.SetTrigger("Die");
+        GameObject.FindGameObjectWithTag("WaveSpawner").GetComponent<WaveSpawner>().enemiesLeft--;
     }
 
     protected override void OnStop()

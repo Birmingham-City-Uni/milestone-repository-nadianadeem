@@ -8,8 +8,6 @@ public class MiniBomb : Agent
     public IdleWanderState idle;
     public TextMeshProUGUI nameplate;
 
-    private bool isReadyToDie = false;
-
     // Start is called before the first frame update
     public override void Start()
     {
@@ -37,10 +35,14 @@ public class MiniBomb : Agent
             stateManager.PushAttackState();
         }
 
-        if (!isReadyToDie && Vector3.Distance(this.transform.position, sensor.info.point) < 2f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
+        //if ((sensor.Hit == true) && sensor.info.collider.gameObject.CompareTag("Player") && Vector3.Distance(this.transform.position, sensor.info.point) < 1f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
+        //{
+        //    stateManager.PushDieState();
+        //}
+
+        if (Vector3.Distance(this.transform.position, stateManager.attackState.dest) < 1f && stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState))
         {
             stateManager.PushDieState();
-            isReadyToDie = true;
         }
 
         if (stateManager.GetCurrStateOnStack().GetType() == typeof(SpawnState))

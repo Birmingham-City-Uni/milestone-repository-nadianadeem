@@ -8,7 +8,6 @@ public class AttackNode : ActionNode
     {
         agent.GetComponent<Animator>().SetBool("IsMoving", false);
         agent.GetComponent<Animator>().SetTrigger("Attack");
-        blackboard.stateNameplate.text = "Attack";
 
         if (agent.name.Contains("Snake"))
         {

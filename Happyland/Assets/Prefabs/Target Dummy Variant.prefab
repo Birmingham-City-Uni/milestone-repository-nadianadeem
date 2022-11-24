@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target Dummy
       objectReference: {fileID: 0}
+    - target: {fileID: 6765917506157113900, guid: 06d0c353705d184468955ad3c8c25874,
+        type: 3}
+      propertyPath: m_TagString
+      value: agent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d0c353705d184468955ad3c8c25874, type: 3}
 --- !u!1 &7963836199367358576 stripped
@@ -374,7 +379,15 @@ MonoBehaviour:
   agentAnimator: {fileID: 0}
   sensor: {fileID: 32721348}
   pathfindingComponent: {fileID: 32721349}
+  gridHasChanged: 0
+  wanderRadius: 1.2
+  wanderDistance: 2
+  wanderJitter: 40
   calculateOnce: 0
+  mainWhiskerLen: 1.25
+  wallAvoidDistance: 0.5
+  sideWhiskerLen: 0.701
+  sideWhiskerAngle: 45
 --- !u!114 &32721347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,10 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 1
-  health: 100
+  currentHealth: 100
   Timer: 1
   playerHeavyAttackDmg: 65
   playerQuickAttackDmg: 15
+  StartingHealth: 100
 --- !u!114 &32721356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +470,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+--- !u!54 &1054464643
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963836199367358582}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 100
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!135 &1054464644
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963836199367358582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 1.04, z: 1.82}
 --- !u!4 &7963836199367844950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6765917506156686860, guid: 06d0c353705d184468955ad3c8c25874,
