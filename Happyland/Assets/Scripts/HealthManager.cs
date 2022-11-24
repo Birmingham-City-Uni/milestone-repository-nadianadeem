@@ -52,43 +52,46 @@ public class HealthManager : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (isEnemy && Timer < 0)
+        if(Timer < 0)
         {
-            if (collision.gameObject.CompareTag("Sword"))
+            if (isEnemy)
             {
-                if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Heavy Attack"))
+                if (collision.gameObject.CompareTag("Sword"))
                 {
-                    currentHealth -= playerHeavyAttackDmg;
-                    Timer = 0.5f;
-                }
+                    if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Heavy Attack"))
+                    {
+                        currentHealth -= playerHeavyAttackDmg;
+                        Timer = 0.5f;
+                    }
 
-                if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Quick Attack"))
-                {
-                    currentHealth -= playerQuickAttackDmg;
-                    Timer = 0.5f;
+                    if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Quick Attack"))
+                    {
+                        currentHealth -= playerQuickAttackDmg;
+                        Timer = 0.5f;
+                    }
                 }
             }
-        }
-        else if (Timer < 0)
-        {
-            if (collision.gameObject.CompareTag("Explosion"))
+            else
             {
-                Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
-                if (collisionDmgComp)
+                if (collision.gameObject.CompareTag("Explosion"))
                 {
-                    currentHealth -= collisionDmgComp.damage;
-                    Timer = 0.5f;
-                    Destroy(collision.gameObject);
+                    Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
+                    if (collisionDmgComp)
+                    {
+                        currentHealth -= collisionDmgComp.damage;
+                        Timer = 0.5f;
+                        Destroy(collision.gameObject.GetComponent<Collider>());
+                    }
                 }
-            }
 
-            if (!isEnemy && Timer < 0 && !collision.gameObject.CompareTag("Sword"))
-            {
-                Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
-                if (collisionDmgComp && collision.transform.root.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                if (!collision.gameObject.CompareTag("Sword"))
                 {
-                    currentHealth -= collisionDmgComp.damage;
-                    Timer = 0.5f;
+                    Damage collisionDmgComp = collision.gameObject.GetComponent<Damage>();
+                    if (collisionDmgComp && collision.transform.root.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    {
+                        currentHealth -= collisionDmgComp.damage;
+                        Timer = 0.5f;
+                    }
                 }
             }
         }

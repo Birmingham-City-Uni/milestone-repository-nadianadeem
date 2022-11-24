@@ -18,12 +18,12 @@ public class MoveToNode : ActionNode
     {
         if (agent.SeekAndAvoid(10, blackboard.moveToPosition))
         {
-            if (Vector3.Distance(agent.transform.position, blackboard.moveToPosition) < 1f)
+            if (agent.pathfindingComponent.path.Count < 1)
             {
                 return BTState.Success;
             }
         }
-        if (Vector3.Distance(agent.transform.position, blackboard.moveToPosition) < 1f)
+        if (agent.pathfindingComponent.path.Count < 1)
         {
             return BTState.Success;
         }

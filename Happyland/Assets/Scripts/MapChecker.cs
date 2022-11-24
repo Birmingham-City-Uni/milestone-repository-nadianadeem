@@ -23,7 +23,7 @@ public class MapChecker : MonoBehaviour
         gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         bool HasChanged = false;
         foreach (GameObject obj in GameObject.FindObjectsOfType(typeof(GameObject)))

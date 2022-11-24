@@ -35,11 +35,6 @@ public class MiniBomb : Agent
             stateManager.PushAttackState();
         }
 
-        //if ((sensor.Hit == true) && sensor.info.collider.gameObject.CompareTag("Player") && Vector3.Distance(this.transform.position, sensor.info.point) < 1f && (stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState)))
-        //{
-        //    stateManager.PushDieState();
-        //}
-
         if (Vector3.Distance(this.transform.position, stateManager.attackState.dest) < 1f && stateManager.GetCurrStateOnStack().GetType() == typeof(AttackState))
         {
             stateManager.PushDieState();

@@ -88,8 +88,6 @@ public class Agent : MonoBehaviour
                 firstHit = hit;
                 break;
             }
-
-            //Debug.DrawLine(transform.position, transform.position + rayDirs[i] * rayDist);
         }
 
         return foundObs;
