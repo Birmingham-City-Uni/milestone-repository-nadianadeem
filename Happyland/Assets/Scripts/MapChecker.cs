@@ -8,7 +8,6 @@ public class MapChecker : MonoBehaviour
     public List<GameObject> unwalkableObjects;
     public List<Vector3> unwalkableObjectsTransform;
 
-
     public void Start()
     {
         foreach(GameObject obj in GameObject.FindObjectsOfType(typeof(GameObject)))
@@ -21,9 +20,10 @@ public class MapChecker : MonoBehaviour
         }
 
         gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
+        InvokeRepeating("UpdateMap", 0, 1f);
     }
 
-    public void FixedUpdate()
+    public void UpdateMap()
     {
         bool HasChanged = false;
         foreach (GameObject obj in GameObject.FindObjectsOfType(typeof(GameObject)))

@@ -40,6 +40,17 @@ public class Grid : MonoBehaviour
 		}
 	}
 
+	public void UpdateNode(Vector3 worldPosition)
+    {
+		bool walkable = !(Physics.CheckSphere(worldPosition, nodeRadius, unwalkableMask));
+		bool isWater = !(Physics.CheckSphere(worldPosition, nodeRadius, waterMask));
+
+		int x = NodeFromWorldPoint(worldPosition).gridX;
+		int y = NodeFromWorldPoint(worldPosition).gridY;
+
+		grid[x, y] = new Node(walkable, isWater, worldPosition, x, y);
+	}
+
 	public List<Node> GetNeighbours(Node node)
 	{
 		List<Node> neighbours = new List<Node>();
@@ -78,20 +89,20 @@ public class Grid : MonoBehaviour
 	}
 
 	public List<Node> path;
-	void OnDrawGizmos()
-	{
-		Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
 
-		if (grid != null)
-		{
-			foreach (Node n in grid)
-			{
-				Gizmos.color = (n.walkable) ? Color.white : Color.red;
-				if (path != null)
-					if (path.Contains(n))
-						Gizmos.color = Color.black;
-				Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-			}
-		}
-	}
+        if (grid != null)
+        {
+            foreach (Node n in grid)
+            {
+                Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                if (path != null)
+                    if (path.Contains(n))
+                        Gizmos.color = Color.black;
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+            }
+        }
+    }
 }

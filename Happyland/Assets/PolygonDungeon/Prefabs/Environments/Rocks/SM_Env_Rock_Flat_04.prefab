@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64679870946622128}
   m_Layer: 6
   m_Name: SM_Env_Rock_Flat_04
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

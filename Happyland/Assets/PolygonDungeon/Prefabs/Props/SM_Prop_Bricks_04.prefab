@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64420978388386812}
   m_Layer: 6
   m_Name: SM_Prop_Bricks_04
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

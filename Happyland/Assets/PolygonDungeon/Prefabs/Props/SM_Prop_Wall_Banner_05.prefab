@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64347608243468472}
   m_Layer: 6
   m_Name: SM_Prop_Wall_Banner_05
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
