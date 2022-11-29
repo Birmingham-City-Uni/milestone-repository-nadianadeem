@@ -15,6 +15,7 @@ TagManager:
   - agent
   - OutsideGrid
   - WaveSpawner
+  - Environment
   layers:
   - Default
   - TransparentFX

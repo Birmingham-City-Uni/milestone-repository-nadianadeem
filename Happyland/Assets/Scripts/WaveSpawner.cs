@@ -13,6 +13,9 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public Wave[] waves;
 
+    public Animator leftDoor;
+    public Animator rightDoor;
+
     private int currentWave;
     public int enemiesLeft;
     public bool isGameStarted = false;
@@ -20,6 +23,7 @@ public class WaveSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartWaveSpawner();
     }
 
     // Update is called once per frame
@@ -36,6 +40,11 @@ public class WaveSpawner : MonoBehaviour
         }
 
         //Trigger door anim here.
+        if(currentWave == (waves.Length) && enemiesLeft == 0)
+        {
+            leftDoor.SetTrigger("OpenLeftDoor");
+            rightDoor.SetTrigger("OpenRightDoor");
+        }
     }
 
     public void StartWaveSpawner()
