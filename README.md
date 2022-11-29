@@ -29,7 +29,7 @@ The controls for the player are basic WASD keyboard keys as well as "E" and "Q",
 
 <h2> Weekly Development Log </h2>
 <h4> /11/2022 </h4>
-Implemented the wave spawner for the enemies. This currently consists of 3 waves. I then added in a skybox and changed my map checker, to do checks every second rather than every frame. I made and triggered the doors to open once the waves were complete. I also implemented a main menu scene and when the player runs out of health the scene currently restarts.
+Implemented the wave spawner for the enemies. This currently consists of 3 waves. I then added in a skybox and changed my map checker, to do checks every second rather than every frame. I made and triggered the doors to open once the waves were complete. I also implemented a main menu scene and when the player runs out of health the scene currently restarts. Implemented heap optimisation for A* pathfinding.
 
 <h4> 17/11/2022 </h4>
 Created the boss behaviour tree and tweaked collisions so they look more reactive. Designed a game narrative to make the experience more well rounded based on feedback from Carlo, also implemented the collision and wall avoidance as well as the wander steering mechanic based on feedback also. I have created a new NPC, which wanders around the secondary part of the map. 
