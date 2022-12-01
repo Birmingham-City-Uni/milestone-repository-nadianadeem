@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class GlobalFlock : MonoBehaviour
 {
     public GameObject boidPrefab;
     public int waitTimeBetweenGoalChange = 10;
-    public static float minFlockHeight = 0.4f;
+    [SerializeField]  public static float minFlockHeight = 0.8f;
     public static int airSizeX = 58;
     public static int airSizeY = 38;
     public static int numBirds = 4;
