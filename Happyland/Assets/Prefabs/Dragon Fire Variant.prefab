@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragon Fire Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1464745901521549467, guid: 3b2bc9ea12bebd34db0ea2d87f964288,
+        type: 3}
+      propertyPath: m_TagString
+      value: boid
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2bc9ea12bebd34db0ea2d87f964288, type: 3}
 --- !u!1 &817728333303452026 stripped

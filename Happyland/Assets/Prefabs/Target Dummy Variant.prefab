@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 6765917506157113900, guid: 06d0c353705d184468955ad3c8c25874,
         type: 3}
       propertyPath: m_Name
-      value: Target Dummy
+      value: Target Dummy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6765917506157113900, guid: 06d0c353705d184468955ad3c8c25874,
         type: 3}
@@ -348,6 +348,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3702069719401450074}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1054464643
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963836199367358582}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 100
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!65 &32721353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -361,6 +377,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.58062935, y: 1.3619107, z: 0.78267336}
   m_Center: {x: -0.013049126, y: 0.6988861, z: -0.009465456}
+--- !u!135 &1054464644
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963836199367358582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 1.04, z: 1.82}
 --- !u!114 &32721346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,36 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38779a34b575ddf47bcb0734339e1cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
---- !u!54 &1054464643
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7963836199367358582}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 100
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
---- !u!135 &1054464644
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7963836199367358582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 1.04, z: 1.82}
+  damage: 10
 --- !u!4 &7963836199367844950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6765917506156686860, guid: 06d0c353705d184468955ad3c8c25874,

@@ -13,9 +13,6 @@ public class OutsideGridFlock : MonoBehaviour
     public static GameObject[] boids = new GameObject[numBirds];
     public static Vector3 goalPos = new Vector3(0, 0, 0);
 
-    GameObject player;
-    Vector3 playerPos;
-
     private IEnumerator setGoalPos()
     {
         yield return new WaitForSeconds(waitTimeBetweenGoalChange);
@@ -26,8 +23,6 @@ public class OutsideGridFlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerPos = player.transform.position;
         goalPos = new Vector3(Random.Range(transform.position.x - (airSizeX / 2), transform.position.x + (airSizeX / 2)), Random.Range(transform.position.y + minFlockHeight, transform.position.y + minFlockHeight + 0.5f), Random.Range(transform.position.z - (airSizeY / 2), transform.position.z + (airSizeY / 2)));
 
         for (int i = 0; i < numBirds; i++)
