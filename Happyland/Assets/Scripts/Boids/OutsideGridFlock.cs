@@ -5,11 +5,11 @@ using UnityEngine;
 public class OutsideGridFlock : MonoBehaviour
 {
     public GameObject boidPrefab;
-    public int waitTimeBetweenGoalChange = 10;
-    [SerializeField] public static float minFlockHeight = 0.8f;
+    public int waitTimeBetweenGoalChange = 1;
+    [SerializeField] public static float minFlockHeight = 1.5f;
     public static int airSizeX = 158;
     public static int airSizeY = 51;
-    public static int numBirds = 8;
+    public static int numBirds = 20;
     public static GameObject[] boids = new GameObject[numBirds];
     public static Vector3 goalPos = new Vector3(0, 0, 0);
 

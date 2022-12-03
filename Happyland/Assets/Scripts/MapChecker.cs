@@ -18,8 +18,6 @@ public class MapChecker : MonoBehaviour
                 unwalkableObjectsTransform.Add(obj.transform.position);
             }
         }
-
-        gridComp = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
         InvokeRepeating("UpdateMap", 0, 1f);
     }
 
