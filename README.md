@@ -13,22 +13,29 @@ You are a knight of Happyland and "some evil guy" has captured you in his ventur
 <p> The map is self contained and has walkable and non-walkable terrain, land and water. I have also added a bridge with multiple exits and large obstacles, this is to see how various pathfinding mechanisms might differ in the environment.
 </p>
 <img src = "AIPhotos/MapOverviewV1.png" title = "Map layout for Happyland">
+<img src = "AIPhotos/MapOverviewV2.png" title = "Map layout for Happyland outside">
 
 <h4> Player </h4>
 The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
 
 <h4> Boid Implementation </h4>
+There are two boids, the dragon and the fairy. They are both technologically the same but work on two different node based grids. 
+<img src = "AIPhotos/DragonBoid.png" title ="Picture of dragon boid in the map.">
+<img src = "AIPhotos/FairyBoid.png" title ="Picture of fairy boid in the map.">
 
 <h4> Enemies </h4>
 <h5> Behaviour Tree For Boss </h5>
-<img src = "AIPhotos/BossBT.PNG" title ="Design Plan For Main Bpss">
+<img src = "AIPhotos/BossBT.PNG" title ="Design Plan For Main Boss">
 <h5> Behaviour Tree For Target Enemy </h5>
 <img src = "AIPhotos/TargetBoardBT.png" title ="Design Plan For Target Board">
 <h5> Finite State Machine Design For Mini Bomb </h5>
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
 
 <h2> Weekly Development Log </h2>
-<h4> /11/2022 </h4>
+<h4> 01/12/2022 </h4>
+This week I have implemented a health bar. I have also changed the fairy boid to work on the outside world grid. I have then made an additional boid which is a gradon to go on the "war" grid.
+
+<h4> 24/11/2022 </h4>
 Implemented the wave spawner for the enemies. This currently consists of 3 waves. I then added in a skybox and changed my map checker, to do checks every second rather than every frame. I made and triggered the doors to open once the waves were complete. I also implemented a main menu scene and when the player runs out of health the scene currently restarts. Implemented heap optimisation for A* pathfinding.
 
 <h4> 17/11/2022 </h4>
