@@ -131,6 +131,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1935506855944144446, guid: 423815a9aec87fb48bbb6f0f35a66653,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935506855944144446, guid: 423815a9aec87fb48bbb6f0f35a66653,
+        type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4420374660899403437, guid: 423815a9aec87fb48bbb6f0f35a66653,
         type: 3}
       propertyPath: m_Name
@@ -404,7 +414,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1573420687
 MonoBehaviour:

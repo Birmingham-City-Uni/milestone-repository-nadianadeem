@@ -16,6 +16,9 @@ TagManager:
   - OutsideGrid
   - WaveSpawner
   - Environment
+  - flower_plant
+  - nectar
+  - boundary
   layers:
   - Default
   - TransparentFX
