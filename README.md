@@ -33,7 +33,7 @@ There are two boids, the dragon and the fairy. They are both technologically the
 
 <h2> Weekly Development Log </h2>
 <h4> 01/12/2022 </h4>
-This week I have implemented a health bar. I have also changed the fairy boid to work on the outside world grid. I have then made an additional boid which is a gradon to go on the "war" grid.
+This week I have implemented a health bar. I have also changed the fairy boid to work on the outside world grid. I have then made an additional boid which is a dragon to go on the "war" grid. I have also started the implementation of the ML agent hummingbird. I have created the scripts and got the training scene ready I just need to create the python file and train.
 
 <h4> 24/11/2022 </h4>
 Implemented the wave spawner for the enemies. This currently consists of 3 waves. I then added in a skybox and changed my map checker, to do checks every second rather than every frame. I made and triggered the doors to open once the waves were complete. I also implemented a main menu scene and when the player runs out of health the scene currently restarts. Implemented heap optimisation for A* pathfinding.
