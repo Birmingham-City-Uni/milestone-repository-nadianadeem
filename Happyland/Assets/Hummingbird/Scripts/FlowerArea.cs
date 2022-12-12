@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class FlowerArea : MonoBehaviour
 {
-    public const float areaDiameter = 20f;
+    public const float areaDiameter = 200f;
 
     //The list of all flower plants in the flower area (Flower plants have multiple flowers.
     private List<GameObject> flowerPlants;
