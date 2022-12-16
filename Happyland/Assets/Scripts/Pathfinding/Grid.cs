@@ -11,7 +11,7 @@ public class Grid : MonoBehaviour
 	public float nodeRadius;
 	public Node[,] grid;
 
-	float nodeDiameter;
+	public float nodeDiameter;
 	public int gridSizeX, gridSizeY;
 
 	void Awake()
@@ -33,7 +33,7 @@ public class Grid : MonoBehaviour
 			{
 				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
 				bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-				bool isWater = !(Physics.CheckSphere(worldPoint, nodeRadius, waterMask));
+				bool isWater = Physics.CheckSphere(worldPoint, nodeRadius, waterMask);
 
 				grid[x, y] = new Node(walkable, isWater, worldPoint, x, y);
 			}
@@ -96,35 +96,29 @@ public class Grid : MonoBehaviour
 		return grid[x, y];
 	}
 
-	public List<Node> path;
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
+		List<GameObject> pathObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("agent"));
 
-        if (onlyDisplayPathGizmos)
-        {
-			if(path != null)
-            {
-				foreach(Node n in path)
-                {
-					Gizmos.color = Color.black;
-					Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-				}
-            }
-        }
-        else
-        {
-			if (grid != null)
+		if (grid != null && !onlyDisplayPathGizmos)
+		{
+			foreach (Node n in grid)
 			{
-				foreach (Node n in grid)
-				{
-					Gizmos.color = (n.walkable) ? Color.white : Color.red;
-					if (path != null)
-						if (path.Contains(n))
-							Gizmos.color = Color.black;
-					Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-				}
+				Gizmos.color = (n.walkable) ? Color.white : Color.red;
+				foreach(GameObject obj in pathObjs)
+                {
+					Pathfinding pathfindingComp = obj.GetComponent<Pathfinding>();
+					if(pathfindingComp != null)
+                    {
+						if(pathfindingComp.path != null)
+                        {
+							if (pathfindingComp.path.Contains(n))
+								Gizmos.color = Color.black;
+							Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+						}
+                    }
+                }
 			}
 		}
-    }
+	}
 }

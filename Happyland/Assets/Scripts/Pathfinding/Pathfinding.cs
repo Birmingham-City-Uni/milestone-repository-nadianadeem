@@ -47,6 +47,7 @@ public class Pathfinding : MonoBehaviour
 	{
 		Node startNode = grid.NodeFromWorldPoint(startPos);
 		Node targetNode = grid.NodeFromWorldPoint(targetPos);
+		startNode.parent = startNode;
 
 		Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
 		HashSet<Node> closedSet = new HashSet<Node>();
@@ -71,7 +72,7 @@ public class Pathfinding : MonoBehaviour
 					continue;
 				}
 
-				int newCostToNeighbour = node.gCost + GetDistance(node, neighbour);
+				int newCostToNeighbour = node.gCost + GetDistance(node, neighbour) + neighbour.movementPenalty;
 				if (newCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
 				{
 					neighbour.gCost = newCostToNeighbour;
@@ -80,6 +81,10 @@ public class Pathfinding : MonoBehaviour
 
 					if (!openSet.Contains(neighbour))
 						openSet.Add(neighbour);
+                    else
+                    {
+						openSet.UpdateItem(neighbour);
+                    }
 				}
 			}
 		}
@@ -220,7 +225,6 @@ public class Pathfinding : MonoBehaviour
 			currentNode = currentNode.parent;
 		}
 		path.Reverse();
-		grid.path = path;
 	}
 
 	int GetDistance(Node nodeA, Node nodeB)
@@ -232,4 +236,22 @@ public class Pathfinding : MonoBehaviour
 			return 14 * dstY + 10 * (dstX - dstY);
 		return 14 * dstX + 10 * (dstY - dstX);
 	}
+
+
+	void OnDrawGizmos()
+	{
+        Gizmos.DrawWireCube(transform.position, new Vector3(grid.gridWorldSize.x, 1, grid.gridWorldSize.y));
+
+        if (grid.onlyDisplayPathGizmos)
+        {
+            if (path != null)
+            {
+                foreach (Node n in path)
+                {
+                    Gizmos.color = Color.black;
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (grid.nodeDiameter - .1f));
+                }
+            }
+        }
+    }
 }

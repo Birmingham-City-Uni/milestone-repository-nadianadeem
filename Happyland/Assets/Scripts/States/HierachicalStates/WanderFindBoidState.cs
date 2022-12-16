@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WanderFindBoidState : State
 {
-    public float speed = 15.0f;
+    public float speed = 7.0f;
     private Grid gridComp;
     private int randX, randY;
     public Pathfinding pathfindingComponent;
@@ -50,6 +50,12 @@ public class WanderFindBoidState : State
                     randY = Random.Range(0, gridComp.gridSizeY - 1);
                     lastLocation = gridComp.grid[randX, randY].worldPosition;
                 }
+            }
+            else
+            {
+                randX = Random.Range(0, gridComp.gridSizeX - 1);
+                randY = Random.Range(0, gridComp.gridSizeY - 1);
+                lastLocation = gridComp.grid[randX, randY].worldPosition;
             }
         }
     }

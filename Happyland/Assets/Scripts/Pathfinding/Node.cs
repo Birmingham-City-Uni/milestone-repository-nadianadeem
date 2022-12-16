@@ -13,6 +13,7 @@ public class Node : IHeapItem<Node>
 	public int gCost;
 	public int hCost;
 	public Node parent;
+	public int movementPenalty;
 	int heapIndex;
 
 	public Node(bool _walkable, bool _isWater, Vector3 _worldPos, int _gridX, int _gridY)
@@ -23,9 +24,13 @@ public class Node : IHeapItem<Node>
 		gridY = _gridY;
 		isWater = _isWater;
 
-        if (_isWater)
+        if (isWater)
         {
-			gCost = 2;
+			movementPenalty = 2;
+        }
+        else
+        {
+			movementPenalty = 0;
         }
 	}
 
