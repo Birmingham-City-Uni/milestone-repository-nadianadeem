@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
 using System;
 using System.Linq;
+
 
 public class BehaviourTreeView : GraphView
 {
@@ -174,3 +176,5 @@ public class BehaviourTreeView : GraphView
         });
     }
 }
+
+#endif
