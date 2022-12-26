@@ -38,6 +38,12 @@ There are two boids, the dragon and the fairy. They are both technologically the
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
 
 <h2> Weekly Development Log </h2>
+<h4> 22/12/2022 </h4>
+I built my scene, this did require me to add in some "#if UNITY_EDITOR" as it was building editor code when it didn't need to.
+
+<h4> 8/12/2022 </h4>
+I trained the ML agents and now have 4 within the outside of the scene working as expected. I also fixes some bugs to do with the mini bomb's wandering mechanic.
+
 <h4> 01/12/2022 </h4>
 This week I have implemented a health bar. I have also changed the fairy boid to work on the outside world grid. I have then made an additional boid which is a dragon to go on the "war" grid. I have also started the implementation of the ML agent hummingbird. I have created the scripts and got the training scene ready I just need to create the python file and train.
 
