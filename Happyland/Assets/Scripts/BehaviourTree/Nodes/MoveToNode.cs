@@ -22,6 +22,10 @@ public class MoveToNode : ActionNode
             {
                 return BTState.Success;
             }
+            if (Vector3.Distance(agent.transform.position, blackboard.moveToPosition) < 1f)
+            {
+                return BTState.Success;
+            }
         }
         else
         {

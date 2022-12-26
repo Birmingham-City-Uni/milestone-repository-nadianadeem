@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.MLAgents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,7 +27,9 @@ public class HealthManager : MonoBehaviour
 
         if(!isEnemy && currentHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Cursor.lockState = CursorLockMode.None;
+            Academy.Instance.Dispose();
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
     }
 

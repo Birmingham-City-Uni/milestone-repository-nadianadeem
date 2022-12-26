@@ -609,7 +609,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 900000000
   moveForce: 2
   pitchSpeed: 100
   yawSpeed: 100

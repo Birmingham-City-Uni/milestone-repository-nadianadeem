@@ -70,12 +70,6 @@ public class HummingbirdAgent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
-        if (trainingMode)
-        {
-            //Only reset flowers in training when there is one agent per area.
-            flowerArea.ResetFlowers();
-        }
-
         //Reset nectar
         NectarObtained = 0;
 

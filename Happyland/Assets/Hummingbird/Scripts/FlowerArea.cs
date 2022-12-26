@@ -63,6 +63,8 @@ public class FlowerArea : MonoBehaviour
     {
         //Find all flowers that are children of this GameObject.
         FindChildFlowers(transform);
+        ResetFlowers();
+        InvokeRepeating("ResetFlowers", 10, 10);
     }
 
     /// <summary>
