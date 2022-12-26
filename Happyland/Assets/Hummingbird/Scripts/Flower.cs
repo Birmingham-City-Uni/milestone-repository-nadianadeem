@@ -119,5 +119,7 @@ public class Flower : MonoBehaviour
         nectarCollider = transform.Find("FlowerNectarCollider").GetComponent<Collider>();
 
         ResetFlower();
+
+        InvokeRepeating("ResetFlower", 10, 10);
     }
 }

@@ -19,11 +19,11 @@ public class WanderNode : ActionNode
     protected override BTState OnUpdate()
     {
         lastPosition = agent.transform.position;
-        if (agent.Wander(10f))
+        if (agent.Wander(3f))
         {
             if(lastPosition == agent.transform.position)
             {
-                agent.Flee(10f, agent.transform.position);
+                agent.Flee(3f, agent.transform.position);
                 return BTState.Success;
             }
             if (Vector3.Distance(agent.transform.position, agent.oldWaypoint) < 1f)

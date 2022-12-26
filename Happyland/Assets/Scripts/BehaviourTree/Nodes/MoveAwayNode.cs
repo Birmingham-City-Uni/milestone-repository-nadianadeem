@@ -19,7 +19,7 @@ public class MoveAwayNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if (agent.Flee(10, blackboard.moveToPosition))
+        if (agent.Flee(7, blackboard.moveToPosition))
         {
             return BTState.Success;
         }

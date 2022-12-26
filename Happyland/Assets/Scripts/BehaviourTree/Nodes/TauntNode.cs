@@ -8,7 +8,6 @@ public class TauntNode : ActionNode
     {
         agent.GetComponent<Animator>().SetBool("IsMoving", false);
         agent.GetComponent<Animator>().SetTrigger("Taunt");
-        blackboard.stateNameplate.text = "Taunt";
     }
 
     protected override void OnStop()

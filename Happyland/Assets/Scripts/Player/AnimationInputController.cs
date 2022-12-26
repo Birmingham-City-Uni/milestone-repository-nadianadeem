@@ -14,6 +14,8 @@ public class AnimationInputController : MonoBehaviour
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        Collider boundaryCollider = GameObject.FindGameObjectWithTag("boundary").GetComponent<Collider>();
+        Physics.IgnoreCollision(boundaryCollider, gameObject.GetComponentInParent<Collider>());
     }
 
     // Update is called once per frame

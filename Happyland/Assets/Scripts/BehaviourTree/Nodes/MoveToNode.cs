@@ -16,14 +16,19 @@ public class MoveToNode : ActionNode
 
     protected override BTState OnUpdate()
     {
-        if (agent.SeekAndAvoid(10, blackboard.moveToPosition))
+        if (agent.SeekAndAvoid(7, blackboard.moveToPosition))
         {
             if (agent.pathfindingComponent.path.Count < 1)
             {
                 return BTState.Success;
             }
         }
-        if (agent.pathfindingComponent.path.Count < 1)
+        else
+        {
+            return BTState.Success;
+        }
+
+        if(Vector3.Distance(agent.transform.position, blackboard.moveToPosition) < 1f)
         {
             return BTState.Success;
         }
