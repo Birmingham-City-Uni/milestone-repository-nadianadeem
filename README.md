@@ -18,6 +18,12 @@ You are a knight of Happyland and "some evil guy" has captured you in his ventur
 <h4> Player </h4>
 The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
 
+<h5> Player Controls </h3> 
+W, A, S, D -> Basic Movement
+E -> Heavy Attack 
+Q -> Light Attack
+Z -> In-Game Debug Interface.
+
 <h4> Boid Implementation </h4>
 There are two boids, the dragon and the fairy. They are both technologically the same but work on two different node based grids. 
 <img src = "AIPhotos/DragonBoid.png" title ="Picture of dragon boid in the map.">
