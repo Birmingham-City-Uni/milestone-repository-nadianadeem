@@ -4,27 +4,10 @@
 <h2> Brief Description </h2>
 <p> Happyland will be a tech demo of a boss fight. This shall include build up stages with weaker enemies, to then build up to a 2 stage boss battle! In Happyland all the surroundings look very cute and friendly but... get too close to the cute creatures and things can take a turn for the worse. </p>
 
-<ul>
-<li>[Chicken Asset](https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842) </li>
-<li>[Sound Manager Asset](https://assetstore.unity.com/packages/tools/audio/sound-manager-audio-sound-and-music-manager-for-unity-56087) </li>
-<li>[BOOM Asset](https://assetstore.unity.com/packages/vfx/particles/cartoon-explosion-boom-weapons-gun-vfx-229740) </li>
-<li>[Knight Asset](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/meshtint-free-knight-133286) </li>
-<li>[3D Tile Asset](https://assetstore.unity.com/packages/3d/environments/meshtint-free-tile-map-mega-toon-series-153619) </li>
-<li>[Polygon Dungeon Pack](https://assetstore.unity.com/packages/3d/environments/dungeons/polygon-dungeons-low-poly-3d-art-by-synty-102677) </li>
-<li>[Cute Monster Pack](https://assetstore.unity.com/packages/3d/characters/creatures/monsters-ultimate-pack-02-cute-series-179083) </li>
-</ul>
-
-
 <h2> Back Story </h2>
 You are a knight of Happyland and "some evil guy" has captured you in his venture to ruin Happyland with evil creatures! You are held captive in a fort and have to fight waves of enemies to escape into the world and save Happyland. If you escape you be back in Happyland where you can see the beautiful landscape and happy creatures around it!
 
 <h2> Design Document </h2>
-
-<h4> Map Layout </h4>
-<p> The map is self contained and has walkable and non-walkable terrain, land and water. I have also added a bridge with multiple exits and large obstacles, this is to see how various pathfinding mechanisms might differ in the environment.
-</p>
-<img src = "AIPhotos/MapOverviewV1.png" title = "Map layout for Happyland">
-<img src = "AIPhotos/MapOverviewV2.png" title = "Map layout for Happyland outside">
 
 <h4> Player </h4>
 The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
@@ -52,6 +35,12 @@ There are two boids, the dragon and the fairy. They are both technologically the
 <h5> Mini Bomb </h5>
 <h6> The mini bomb will go around scaring boids while wandering around. If a boid is in sight then it will scare the boid and then go and traverse back to its original wandering path before wandering around somewhere else. If the bomb sees the player it will move to the position it saw the player first and then explode.
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
+
+<h4> Map Layout </h4>
+<p> The map is self contained and has walkable and non-walkable terrain, land and water. I have also added a bridge with multiple exits and large obstacles, this is to see how various pathfinding mechanisms might differ in the environment.
+</p>
+<img src = "AIPhotos/MapOverviewV1.png" title = "Map layout for Happyland">
+<img src = "AIPhotos/MapOverviewV2.png" title = "Map layout for Happyland outside">
 
 <h2> Weekly Development Log </h2>
 <h4> 22/12/2022 </h4>
@@ -101,3 +90,14 @@ This week I have excluded the tutorial files from linter as they do not contribu
 
 <h4> 22/09/2022 </h4>
 <p> This week I have done the initial github setup as well as running through some ideas on paper to get my design document ready. I have also added the linter workflow to help with coding standards. I have imported various assets that I shall use for the environment, player and enemies for the project also. </p>
+
+<h2> References </h2>
+<ul>
+<li>Eretichable (no date) Cartoon Explosion Boom Weapons Gun VFX: VFX particles, Unity Asset Store. Available at: https://assetstore.unity.com/packages/vfx/particles/cartoon-explosion-boom-weapons-gun-vfx-229740 (Accessed: November 7, 2022).  </li>
+<li>Johnson, J. (no date) Sound manager - audio, sound and music manager for unity: Audio, Unity Asset Store. Available at: https://assetstore.unity.com/packages/tools/audio/sound-manager-audio-sound-and-music-manager-for-unity-56087 (Accessed: November 15, 2022).  </li>
+<li>Studios, M (no date) Meshtint Free Chicken mega toon series: 3D animals Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842 (Accessed: November 17, 2022) </li>
+<li>Studios, M. (no date) Meshtint Free Knight: Characters, Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/meshtint-free-knight-133286 (Accessed: September 22, 2022).  </li>
+<li>Studios, M. (no date) Meshtint Free Tile Map Mega Toon Series: 3D environments, Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/environments/meshtint-free-tile-map-mega-toon-series-153619 (Accessed: September 22, 2022). </li>
+<li>Studios, M. (no date) Monsters ultimate pack 02 cute series: 3D creatures, Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/characters/creatures/monsters-ultimate-pack-02-cute-series-179083 (Accessed: September 22, 2022). </li>
+<li>Studios, S (no date) Polygon dungeons - low poly 3D art by Synty: 3D dungeons Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/environments/dungeons/polygon-dungeons-low-poly-3d-art-by-synty-102677 (Accessed: September 22, 2022).  </li>
+</ul>
