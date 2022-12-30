@@ -4,6 +4,17 @@
 <h2> Brief Description </h2>
 <p> Happyland will be a tech demo of a boss fight. This shall include build up stages with weaker enemies, to then build up to a 2 stage boss battle! In Happyland all the surroundings look very cute and friendly but... get too close to the cute creatures and things can take a turn for the worse. </p>
 
+<ul>
+<li>[Chicken Asset](https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842) </li>
+<li>[Sound Manager Asset](https://assetstore.unity.com/packages/tools/audio/sound-manager-audio-sound-and-music-manager-for-unity-56087) </li>
+<li>[BOOM Asset](https://assetstore.unity.com/packages/vfx/particles/cartoon-explosion-boom-weapons-gun-vfx-229740) </li>
+<li>[Knight Asset](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/meshtint-free-knight-133286) </li>
+<li>[3D Tile Asset](https://assetstore.unity.com/packages/3d/environments/meshtint-free-tile-map-mega-toon-series-153619) </li>
+<li>[Polygon Dungeon Pack](https://assetstore.unity.com/packages/3d/environments/dungeons/polygon-dungeons-low-poly-3d-art-by-synty-102677) </li>
+<li>[Cute Monster Pack](https://assetstore.unity.com/packages/3d/characters/creatures/monsters-ultimate-pack-02-cute-series-179083) </li>
+</ul>
+
+
 <h2> Back Story </h2>
 You are a knight of Happyland and "some evil guy" has captured you in his venture to ruin Happyland with evil creatures! You are held captive in a fort and have to fight waves of enemies to escape into the world and save Happyland. If you escape you be back in Happyland where you can see the beautiful landscape and happy creatures around it!
 
@@ -19,10 +30,12 @@ You are a knight of Happyland and "some evil guy" has captured you in his ventur
 The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
 
 <h5> Player Controls </h3> 
-W, A, S, D -> Basic Movement
-E -> Heavy Attack 
-Q -> Light Attack
-Z -> In-Game Debug Interface.
+<ul>
+<li>W, A, S, D -> Basic Movement</li>
+<li>E -> Heavy Attack</li> 
+<li>Q -> Light Attack </li>
+<li>Z -> In-Game Debug Interface. </li>
+</ul>
 
 <h4> Boid Implementation </h4>
 There are two boids, the dragon and the fairy. They are both technologically the same but work on two different node based grids. 
