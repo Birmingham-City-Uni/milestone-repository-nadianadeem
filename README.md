@@ -30,11 +30,14 @@ There are two boids, the dragon and the fairy. They are both technologically the
 <img src = "AIPhotos/FairyBoid.png" title ="Picture of fairy boid in the map.">
 
 <h4> Enemies </h4>
-<h5> Behaviour Tree For Boss </h5>
+<h5> Snake Boss </h5>
+<h6> The snake boss knows the player's health, if the players health is high then it will either, move to and attack, or pretend to evade but move to and attack. If the player is at low health the boss will look to run away and taunt the player and sometimes attack. </h6>
 <img src = "AIPhotos/BossBT.PNG" title ="Design Plan For Main Boss">
-<h5> Behaviour Tree For Target Enemy </h5>
+<h5> Target Enemy </h5>
+<h6> The target board will either evade, pretend to evade but then move to and attack or just move to and attack until death. <h6>
 <img src = "AIPhotos/TargetBoardBT.png" title ="Design Plan For Target Board">
-<h5> Finite State Machine Design For Mini Bomb </h5>
+<h5> Mini Bomb </h5>
+<h6> The mini bomb will go around scaring boids while wandering around. If a boid is in sight then it will scare the boid and then go and traverse back to its original wandering path before wandering around somewhere else. If the bomb sees the player it will move to the position it saw the player first and then explode.
 <img src = "AIPhotos/MiniBombFSMDesignV2.PNG" title= "Design Plan for Mini Bomb">
 
 <h2> Weekly Development Log </h2>
