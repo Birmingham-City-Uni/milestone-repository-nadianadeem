@@ -13,6 +13,7 @@ You are a knight of Happyland and "some evil guy" has captured you in his ventur
 The controls for the player are basic WASD keyboard keys as well as "E" and "Q", which will represent a quick attack (quicker, less damage) and a heavy damage attack (longer, more powerful).
 
 <h5> Player Controls </h3> 
+<p> To play the game open the "bin" folder and open the program labelled "Happyland" </p>
 <ul>
 <li>W, A, S, D -> Basic Movement</li>
 <li>E -> Heavy Attack</li> 
@@ -100,4 +101,5 @@ This week I have excluded the tutorial files from linter as they do not contribu
 <li>Studios, M. (no date) Meshtint Free Tile Map Mega Toon Series: 3D environments, Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/environments/meshtint-free-tile-map-mega-toon-series-153619 (Accessed: September 22, 2022). </li>
 <li>Studios, M. (no date) Monsters ultimate pack 02 cute series: 3D creatures, Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/characters/creatures/monsters-ultimate-pack-02-cute-series-179083 (Accessed: September 22, 2022). </li>
 <li>Studios, S (no date) Polygon dungeons - low poly 3D art by Synty: 3D dungeons Unity Asset Store. Available at: https://assetstore.unity.com/packages/3d/environments/dungeons/polygon-dungeons-low-poly-3d-art-by-synty-102677 (Accessed: September 22, 2022).  </li>
+<li> Unknown (no date) Trogdor The Burninator. Available at: https://i.stack.imgur.com/ihN3m.png (Accessed: December 30, 2022). </li>
 </ul>
