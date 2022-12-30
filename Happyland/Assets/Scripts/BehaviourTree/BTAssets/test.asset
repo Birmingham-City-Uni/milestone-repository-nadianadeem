@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8811124102645659824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5b224eb3d2aa4ba5746adb39c9d51, type: 3}
+  m_Name: NDSelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 66e1df550b3a7b94ca258009266abf1b
+  position: {x: 150.00003, y: 508.00003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 3029771825410833456}
+  - {fileID: -8496743285226057756}
+  current: 0
+--- !u!114 &-8496743285226057756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0803f0adf558fd242a16bebf72f971b7, type: 3}
+  m_Name: EvadeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b9a173fee632d9141ba383b88b132436
+  position: {x: 38.21584, y: 687.9998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: Evade enemy
+--- !u!114 &-2869801326716552753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93513547d0e317348874e60d881039e5, type: 3}
+  m_Name: IsEnemyVisibleNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2724a5ded1946b943b55d88818972b2a
+  position: {x: -256.5651, y: 389}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8757df7db6bb54e8233c3abb2ce415, type: 3}
+  m_Name: test
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 516203657399346351}
+  treeState: 0
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  nodes:
+  - {fileID: 516203657399346351}
+  - {fileID: 3435593373579209214}
+  - {fileID: 351268115213880684}
+  - {fileID: -2869801326716552753}
+  - {fileID: 2464636370707290039}
+  - {fileID: 6368334385621361252}
+  - {fileID: -8811124102645659824}
+  - {fileID: 3029771825410833456}
+  - {fileID: -8496743285226057756}
+--- !u!114 &351268115213880684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02078f978a9312488274d9c57807a3a, type: 3}
+  m_Name: AttackNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b11b6d139d84f144bb02335645bf64f8
+  position: {x: -75, y: 531.87}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: Attack Enemy
+--- !u!114 &516203657399346351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ffe98e90a1fbd478f3b5dce880b39c, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1c81a722d6171404294ac9022479af59
+  position: {x: 0, y: 0}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 3435593373579209214}
+--- !u!114 &2464636370707290039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459bab5538c12c34e85f821fa0d486eb, type: 3}
+  m_Name: UntilSuccessNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 660a0bec6a334b44ba585c6a7351187e
+  position: {x: -75.00008, y: 389}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 351268115213880684}
+--- !u!114 &3029771825410833456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98a94f1c2d43441827d37a27cd1689, type: 3}
+  m_Name: DieNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b94200029651cfc4b9e2c31265823de2
+  position: {x: 254, y: 688}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &3435593373579209214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a29115416e050149ad64de08ef150ef, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 716e4363a7a077a4c843f0b0366adb02
+  position: {x: 0.000070190436, y: 163.9}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -2869801326716552753}
+  - {fileID: 2464636370707290039}
+  - {fileID: 6368334385621361252}
+  current: 0
+--- !u!114 &6368334385621361252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5599abf3c8030444f8c46be582b6bc62, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 35f6c83b3311ada448505c1bcec397dc
+  position: {x: 150.00006, y: 388.99994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    doesPlayerHaveHighHealth: 1
+    evadeObject: {fileID: 0}
+    stateNameplate: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: -8811124102645659824}
